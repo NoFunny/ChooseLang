@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class WebController {
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(){
         return "index";
     }
@@ -18,4 +18,7 @@ public class WebController {
     public String profile(){
         return "profile";
     }
+
+//    @RequestMapping(value = "/", method = RequestMethod.GET)
+//    public String root(){return "/index"; }
 }

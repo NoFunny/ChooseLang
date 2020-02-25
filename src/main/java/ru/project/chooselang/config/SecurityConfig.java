@@ -1,4 +1,4 @@
-package ru.project.chooselang.contollers;
+package ru.project.chooselang.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/js/**", "/css/**", "/reg_user", "/content/**").permitAll()
+                .antMatchers("/", "/index", "/js/**", "/css/**", "/reg_user", "/content/**,/profile/").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
