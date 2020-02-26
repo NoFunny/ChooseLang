@@ -263,7 +263,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="ruby_tab" roleb="tabpanel" aria-labelledby="ruby-tab">
+            <div class="tab-pane fade" id="ruby_tab" role="tabpanel" aria-labelledby="ruby-tab">
                 <div class="col-xl-6">
                     <div class="row">
                         <div class="col">Books
@@ -304,31 +304,6 @@
 <br>
 <div class="container-fluid">
     <div class="container-fluid footer">
-        <div class="container">
-            <div class="row ">
-                <div class="col">
-                    <form class="footer__form">
-                        <div class="row mt-4">
-                            <!-- <div class="col-12 footer__form__item">
-                                <input class="footer__form__string" type="text" maxlength="15" placeholder="Name">
-                            </div>
-                            <div class="col-12 footer__form__item">
-                                <input class="footer__form__string" type="password" maxlength="15" placeholder="Password">
-                            </div>
-                            <div class="col-12 footer__form__item">
-                                <input class="footer__form__string" type="text" maxlength="11" placeholder="Number">
-                            </div>
-                            <div class="col-12 footer__form__item">
-                                <textarea class="footer__form__string" type="comment" cols="25" rows="3"></textarea>
-                            </div>
-                            <div class="col-12 footer__form__item">
-                                <button type="submit">Send</button>
-                            </div> -->
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
         <div class="row footer_info">
             <div class="col">ABOUT</div>
             <div class="col">CONTACTS</div>
@@ -346,19 +321,41 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <form>
+            <form method="post">
             <div>
                 <div class="modal-body">
-                        <input type="text" placeholder="Name">
-                        <input type="password" placeholder="Password">
-                        <input type="password" placeholder="Repeat password">
-                        <input type="email" placeholder="Email">
+                    <div class="form-group">
+                        <label for="firstName">First name</label>
+                        <input type="text" class="form-control" id="firstName" required="required" placeholder="First name" pattern="[А-Я][а-я]{1,15}">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last name</label>
+                        <input type="text" class="form-control" id="lastName" required="required" placeholder="Last name" pattern="[А-Я][а-я]{1,15}">
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" required="required" placeholder="Name" pattern="[0-9a-zA-Z]{6,12}">
+                    </div>
+                    <div class="form-group">
+                       <label for="password">Password</label>
+                       <input type="password" class="form-control" id="password" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
+                    </div>
+                    <div class="form-group">
+                       <label for="repeat_pass">Repeat password</label>
+                       <input type="password" class="form-control" id="repeat_pass" required="required" placeholder="Repeat password" pattern="[A-Za-z0-9]{6,20}">
+                    </div>
+                    <div class="form-group">
+                       <label for="mail">Email</label>
+                       <input type="email" class="form-control" aria-describedby="emailHelp" id="mail" required="required" placeholder="Email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+                    </div>
                 </div>
             </div>
                 <div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" style="color:white">Close</button>
-                        <input type="submit">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" id="sign_up" class="close bd-dark" data-dismiss="modal" aria-label="Close" style="color:white">
+                            <span aria-hidden="true">×</span>
+                        </button>
                     </div>
                 </div>
             </form>
@@ -375,17 +372,25 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <form>
+            <form method="post">
                 <div>
                     <div class="modal-body">
-                        <input type="text" placeholder="Name">
-                        <input type="password" placeholder="Password">
+                      <div class="form-group">
+                          <label for="inUsername">Username</label>
+                          <input type="text" id="inUsername" required="required" placeholder="Name" pattern="[0-9a-zA-Z]{6,12}">
+                      </div>
+                      <div class="form-group">
+                          <label for="inPassword">First name</label>
+                          <input type="password" id="inPassword" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
+                      </div>
                     </div>
                 </div>
                 <div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" style="color:white">Close</button>
-                        <input type="submit">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="close bd-dark" data-dismiss="modal" aria-label="Close" style="color:white">
+                            <span aria-hidden="true">×</span>
+                        </button>
                     </div>
                 </div>
             </form>
@@ -393,13 +398,15 @@
     </div>
 </div>
 
+<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!--<script src="path/to/smooth-scroll.polyfills.min.js"></script>-->
+<script src="path/to/smooth-scroll.polyfills.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/index.js" type="text/javascript"></script>
+<script src="js/registration.js" type="text/javascript"></script>
 </body>
 </html>
