@@ -20,11 +20,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private DataSource dataSource;
 
     @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
+    protected void configure(HttpSecurity http) throws Exception {
+        http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/js/**", "/css/**", "/reg_user", "/content/**").permitAll()
+                .antMatchers("/", "/index", "/js/**", "/css/**", "/add_user", "/content/**").permitAll()
                 .antMatchers("/profile/**").hasAuthority("USER")
                 .anyRequest().authenticated()
                 .and()
