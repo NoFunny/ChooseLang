@@ -20,7 +20,7 @@ public class UserController {
     UserService userService;
 
 
-    @RequestMapping(value = "/add_user", method = RequestMethod.POST)
+    @RequestMapping(value = "/add_user", produces = MediaType.APPLICATION_JSON_VALUE)
     public Byte add_user(@RequestBody String object) throws UnsupportedEncodingException {
         byte answer = 0;
         ArrayList<String> req = SplitURL.split(object);
@@ -29,8 +29,6 @@ public class UserController {
             answer = userService.AddUser(user);
             return answer;
         } else {
-//            User user = new User(req.get(0), req.get(1), req.get(2), req.get(3), req.get(4));
-//            byte answer = userService.AddUser(user);
             return answer;
         }
     }
