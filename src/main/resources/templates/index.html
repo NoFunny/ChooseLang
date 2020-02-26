@@ -22,7 +22,7 @@
         <button type="button" class="navbar-toggler  button_collapsed" data-toggle="collapse" data-target="#navbarToggler"  aria-expanded="false"><span class=" dg-primary navbar-toggler-icon"></span></button>
         <span class="navbar-brand mb-2 h1 text-light">WPLISLF</span>
         <span class="selected_city ml-5 mb-2 text-light"></span>
-        <div class="collapse navbar-collapse navbar_list" id="navbarToggler">
+        <div class="collapse navbar-collapse navbar_list justify-content-center" id="navbarToggler">
             <ul class="navbar-nav ml-auto mr-2">
                 <li class="nav-item active">
                     <a href="#" class="nav-link text-light nav-item_word mb-2">Home</a>
@@ -339,46 +339,56 @@
 
 <div class="modal fade bd-signUp-modal-sm mt-5" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm mt-5">
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col modal-head mt-2" style="background: rgb(25,45,172);color:white;font-weight: bold">
-                    <div class="modal-content" style="background: transparent;border: 0">
-                        Регистрация
-                        <div class="row">
-                            <div class="col modal-body">
-                                <form action="">
-                                    <input type="text" placeholder="Name">
-                                    <input type="password" placeholder="Password">
-                                    <input type="password" placeholder="Repeat password">
-                                    <input type="submit">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+        <div class="modal-content" style="background: rgb(25,45,172);color:white;font-weight: bold">
+            <div class="modal-header">
+                <h4 class="modal-title">Регистрация</h4>
+                <button type="button" class="close bd-dark" data-dismiss="modal" aria-label="Close" style="color:white">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form>
+            <div>
+                <div class="modal-body">
+                        <input type="text" placeholder="Name">
+                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Repeat password">
+                        <input type="email" placeholder="Email">
                 </div>
             </div>
+                <div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="color:white">Close</button>
+                        <input type="submit">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
 <div class="modal fade bd-signIn-modal-sm mt-5" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm mt-5">
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col modal-head mt-2" style="background: rgb(25,45,172);color:white;font-weight: bold">
-                    <div class="modal-content" style="background: transparent;border: 0">
-                        Вход
-                        <div class="row">
-                            <div class="col modal-body">
-                                <form action="">
-                                    <input type="text" placeholder="Name">
-                                    <input type="password" placeholder="Password">
-                                    <input type="submit">
-                                </form>
-                            </div>
-                        </div>
+        <div class="modal-content" style="background: rgb(25,45,172);color:white;font-weight: bold">
+            <div class="modal-header">
+                <h4 class="modal-title">Вход</h4>
+                <button type="button" class="close bd-dark" data-dismiss="modal" aria-label="Close" style="color:white">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form>
+                <div>
+                    <div class="modal-body">
+                        <input type="text" placeholder="Name">
+                        <input type="password" placeholder="Password">
                     </div>
                 </div>
-            </div>
+                <div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="color:white">Close</button>
+                        <input type="submit">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
