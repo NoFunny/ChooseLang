@@ -18,4 +18,5 @@ public class WebController {
     public String profile(){
         return "profile";
     }
+
 }

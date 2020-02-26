@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -7,11 +7,11 @@
     <!-- Настройка viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Which programming language should i learn first?</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<!--    <link href="css/admin.css" rel="stylesheet">-->
+    <!--    <link href="css/admin.css" rel="stylesheet">-->
 
 
 </head>
@@ -22,39 +22,39 @@
         <button type="button" class="navbar-toggler  button_collapsed" data-toggle="collapse" data-target="#navbarToggler"  aria-expanded="false"><span class=" dg-primary navbar-toggler-icon"></span></button>
         <span class="navbar-brand mb-2 h1 text-light">WPLISLF</span>
         <span class="selected_city ml-5 mb-2 text-light"></span>
-        <div class="collapse navbar-collapse navbar_list" id="navbarToggler">
-                <ul class="navbar-nav ml-auto mr-2">
-                    <li class="nav-item active">
-                        <a href="#" class="nav-link text-light nav-item_word mb-2">Home</a>
-                    </li>
-                    <li class="nav-item active">
-                        <button type="button" class="nav-link btn btn-primary" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger "  data-toggle="modal" data-target=".bd-signUp-modal-sm">Sign up</button>
-                    </li>
-                    <li class="nav-item active">
-                        <button type="button" class="nav-link btn btn-primary" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger "  data-toggle="modal" data-target=".bd-signIn-modal-sm">Sign in</button>
-                    </li>
-                    <li class="nav-item active">
-                        <select name="City" size="1" id="select" class="form-control select_form">
-                            <option selected="selected" hidden>Select city</option>
-                            <option value="NSK">NSK</option>
-                            <option value="MSK">MSK</option>
-                            <option value="BSK">BSK</option>
-                            <option value="SPB">SPB</option>
-                            <option value="BRN">BRN</option>
-                            <option value="NSK">NSK</option>
-                            <option value="MSK">MSK</option>
-                            <option value="BSK">BSK</option>
-                            <option value="SPB">SPB</option>
-                            <option value="BRN">BRN</option>
-                            <option value="NSK">NSK</option>
-                            <option value="MSK">MSK</option>
-                            <option value="BSK">BSK</option>
-                            <option value="SPB">SPB</option>
-                            <option value="BRN">BRN</option>
-                        </select>
-                    </li>
-                </ul>
-            </div>
+        <div class="collapse navbar-collapse navbar_list justify-content-center" id="navbarToggler">
+            <ul class="navbar-nav ml-auto mr-2">
+                <li class="nav-item active">
+                    <a href="#" class="nav-link text-light nav-item_word mb-2">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <button type="button" class="nav-link btn btn-primary" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger "  data-toggle="modal" data-target=".bd-signUp-modal-sm">Sign up</button>
+                </li>
+                <li class="nav-item active">
+                    <button type="button" class="nav-link btn btn-primary" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger "  data-toggle="modal" data-target=".bd-signIn-modal-sm">Sign in</button>
+                </li>
+                <li class="nav-item active">
+                    <select name="City" size="1" id="select" class="form-control select_form">
+                        <option selected="selected" hidden>Select city</option>
+                        <option value="NSK">NSK</option>
+                        <option value="MSK">MSK</option>
+                        <option value="BSK">BSK</option>
+                        <option value="SPB">SPB</option>
+                        <option value="BRN">BRN</option>
+                        <option value="NSK">NSK</option>
+                        <option value="MSK">MSK</option>
+                        <option value="BSK">BSK</option>
+                        <option value="SPB">SPB</option>
+                        <option value="BRN">BRN</option>
+                        <option value="NSK">NSK</option>
+                        <option value="MSK">MSK</option>
+                        <option value="BSK">BSK</option>
+                        <option value="SPB">SPB</option>
+                        <option value="BRN">BRN</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
     </nav>
 </header>
 <div class="container-fluid">
@@ -339,46 +339,56 @@
 
 <div class="modal fade bd-signUp-modal-sm mt-5" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm mt-5">
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col modal-head mt-2" style="background: rgb(25,45,172);color:white;font-weight: bold">
-                    <div class="modal-content" style="background: transparent;border: 0">
-                        Регистрация
-                        <div class="row">
-                            <div class="col modal-body">
-                                <form action="">
-                                    <input type="text" placeholder="Name">
-                                    <input type="password" placeholder="Password">
-                                    <input type="password" placeholder="Repeat password">
-                                    <input type="submit">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+        <div class="modal-content" style="background: rgb(25,45,172);color:white;font-weight: bold">
+            <div class="modal-header">
+                <h4 class="modal-title">Регистрация</h4>
+                <button type="button" class="close bd-dark" data-dismiss="modal" aria-label="Close" style="color:white">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form>
+            <div>
+                <div class="modal-body">
+                        <input type="text" placeholder="Name">
+                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Repeat password">
+                        <input type="email" placeholder="Email">
                 </div>
             </div>
+                <div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="color:white">Close</button>
+                        <input type="submit">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
 <div class="modal fade bd-signIn-modal-sm mt-5" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm mt-5">
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col modal-head mt-2" style="background: rgb(25,45,172);color:white;font-weight: bold">
-                    <div class="modal-content" style="background: transparent;border: 0">
-                        Вход
-                        <div class="row">
-                            <div class="col modal-body">
-                                <form action="">
-                                    <input type="text" placeholder="Name">
-                                    <input type="password" placeholder="Password">
-                                    <input type="submit">
-                                </form>
-                            </div>
-                        </div>
+        <div class="modal-content" style="background: rgb(25,45,172);color:white;font-weight: bold">
+            <div class="modal-header">
+                <h4 class="modal-title">Вход</h4>
+                <button type="button" class="close bd-dark" data-dismiss="modal" aria-label="Close" style="color:white">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form>
+                <div>
+                    <div class="modal-body">
+                        <input type="text" placeholder="Name">
+                        <input type="password" placeholder="Password">
                     </div>
                 </div>
-            </div>
+                <div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="color:white">Close</button>
+                        <input type="submit">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -390,6 +400,6 @@
 <!--<script src="path/to/smooth-scroll.polyfills.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="../static/js/index.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript"></script>
 </body>
 </html>
