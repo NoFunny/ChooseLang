@@ -1,20 +1,22 @@
 $(document).ready (() => {
     console.log($(window).width());
-    if($(window).width() === 1920) {
+    if(($(window).width() > 1800) && ($(window).width() < 2000)) {
         $('.main-photo').height(1015);
-    }else if($(window).width() === 1280) {
-        $('.main-photo').height(674);
-    }else if($(window).width() === 1351) {
+    }else if(($(window).width() > 1300) && ($(window).width() === 1400)) {
         $('.main-photo').height(700);
-    }else if($(window).width() === 1024) {
+    }else if(($(window).width() > 1170) && ($(window).width() < 1290)) {
+        $('.main-photo').height(674);
+    }else if(($(window).width() > 964) && ($(window).width() < 1124)) {
         $('.main-photo').height(533);
-    }else if($(window).width() === 768) {
+    }else if(($(window).width() > 710) && ($(window).width() < 820)) {
         $('.main-photo').height(393);
-    }else if($(window).width() === 425) {
-        $('.main-photo').height(201);
-    }else if($(window).width() === 375) {
+    }else if($(window).width() == 720) {
+        $('.main-photo').height(393);
+    }else if(($(window).width() > 410) && ($(window).width() < 600)) {
+        $('.main-photo').height(198);
+    }else if(($(window).width() > 345) && ($(window).width() < 410)) {
         $('.main-photo').height(170);
-    }else if($(window).width() === 320) {
+    }else if(($(window).width() > 300) && ($(window).width() < 340)) {
         $('.main-photo').height(143);
     }
 });

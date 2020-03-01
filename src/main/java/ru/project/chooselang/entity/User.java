@@ -48,16 +48,6 @@ public class User implements UserDetails {
     }
 
     @Override
-    public String getPassword() {
-        return getPassword();
-    }
-
-    @Override
-    public String getUsername() {
-        return getUsername();
-    }
-
-    @Override
     public boolean isAccountNonExpired() {
         return true;
     }
@@ -75,5 +65,20 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", active=" + active +
+                ", iconUrl='" + iconUrl + '\'' +
+                ", roles=" + roles +
+                '}';
     }
 }
