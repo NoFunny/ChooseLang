@@ -18,7 +18,7 @@ public class UserService implements UserDetailsService {
     private UserRepository userRepository;
 
     @Transactional
-    public byte AddUser(User user) {
+    public byte addUser(User user) {
         if(userRepository.existsByEmail(user.getEmail())) {
             log.warn("User with email " + user.getEmail() + " exists");
             return 1;
@@ -38,6 +38,14 @@ public class UserService implements UserDetailsService {
         user.setRoles(Collections.singleton(Role.USER));
         userRepository.save(user);
         log.error(user.toString() + " added successfully");
+        return 0;
+    }
+
+    @Transactional
+    public Byte log_in(User user) {
+        if(!userRepository.existsByUsername(user.getUsername())) {
+            return 1;
+        }
         return 0;
     }
 

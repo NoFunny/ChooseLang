@@ -7,6 +7,10 @@ ul {
 	list-style: none ;
 }
 
+ul.navigation {
+	align-items: center;
+}
+
 .head {
 	background-color: rgba(14,26,100,1);
 
