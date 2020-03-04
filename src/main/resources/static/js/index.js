@@ -21,7 +21,7 @@ $(document).ready (() => {
     }
 });
 
-window.onload = function () {
+window.onload =  () => {
     jQuery(".selected_city").text(ymaps.geolocation.city);
 };
 
@@ -49,3 +49,7 @@ $('#select').change(function() {
     let city = $(this).val();
     $('.selected_city').text(city);
 });
+
+$('#sign_in').click(() => {
+    $("#modalIn").modal("toggle");
+})

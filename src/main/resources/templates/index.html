@@ -1,21 +1,28 @@
-<!DOCTYPE HTML>
-<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Настройка viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Which programming language should i learn first?</title>
+
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-
-    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+    <script src="js/registration.js" type="text/javascript"></script>
 
 </head>
 <body class="body">
@@ -28,13 +35,26 @@
         <div class="collapse navbar-collapse navbar_list justify-content-center" id="navbarToggler">
             <ul class="navbar-nav ml-auto mr-2 navigation">
                 <li class="nav-item active">
-                    <a href="#" class="nav-link text-light nav-item_word">Home</a>
+                    <a href="#"  class="nav-link text-light nav-item_word">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <button type="button" class="nav-link btn btn-primary" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger; align-self:  center "  data-toggle="modal" data-target=".bd-signUp-modal-sm">Sign up</button>
+                    <a type="button" th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger; align-self:  center "  data-toggle="modal" data-target=".bd-signUp-modal-sm">Sign up</a>
                 </li>
                 <li class="nav-item active">
-                    <button type="button" class="nav-link btn btn-primary" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger "  data-toggle="modal" data-target=".bd-signIn-modal-sm">Sign in</button>
+                    <a type="button"  th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger "  data-toggle="modal" data-target=".bd-signIn-modal-sm">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light nav-item_word" th:inline="text" href="/profile" id = "userLogin">[[${#httpServletRequest.remoteUser}]]</a>
+                </li>
+                <li class="nav-item active" >
+                    <a th:if="${#httpServletRequest.remoteUser}" href="/logout" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger ">Exit</a>
+                </li>
+                <li>
+                    <div th:if="${param.error}">
+                        <script>
+                            alert("Такого логина и/или пароля нету");
+                        </script>
+                    </div>
                 </li>
                 <li class="nav-item active">
                     <select name="City" size="1" id="select" class="form-control select_form">
@@ -329,19 +349,19 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="firstName">First name</label>
-                        <input type="text" class="form-control" id="firstName" required="required" placeholder="First name" pattern="[А-Я][а-я]{1,15}">
+                        <input type="text" class="form-control" id="firstName" required="required" placeholder="First name" pattern="[A-Z][a-z]{1,15}">
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last name</label>
-                        <input type="text" class="form-control" id="lastName" required="required" placeholder="Last name" pattern="[А-Я][а-я]{1,15}">
+                        <input type="text" class="form-control" id="lastName" required="required" placeholder="Last name" pattern="[A-Z][a-z]{1,15}">
                     </div>
                     <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" id="username" required="required" placeholder="Name" pattern="[0-9a-zA-Z]{6,12}">
+                        <label for="upUsername">Username</label>
+                        <input type="text" class="form-control" id="upUsername" required="required" placeholder="Name" pattern="[0-9a-zA-Z]{6,12}">
                     </div>
                     <div class="form-group">
-                       <label for="password">Password</label>
-                       <input type="password" class="form-control" id="password" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
+                       <label for="upPassword">Password</label>
+                       <input type="password" class="form-control" id="upPassword" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
                     </div>
                     <div class="form-group">
                        <label for="repeat_pass">Repeat password</label>
@@ -375,22 +395,22 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <form method="post">
+            <form action="/index" method="post">
                 <div>
                     <div class="modal-body">
                       <div class="form-group">
-                          <label for="inUsername">Username</label>
-                          <input type="text" id="inUsername" required="required" placeholder="Name" pattern="[0-9a-zA-Z]{6,12}">
+                          <label for="username">Username</label>
+                          <input type="text" id="username" name="username" required="required" placeholder="Name" pattern="[0-9a-zA-Z]{6,12}">
                       </div>
                       <div class="form-group">
-                          <label for="inPassword">First name</label>
-                          <input type="password" id="inPassword" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
+                          <label for="password">First name</label>
+                          <input type="password" id="password" name="password" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
                       </div>
                     </div>
                 </div>
                 <div>
                     <div class="modal-footer">
-                        <button type="button" id="sign_in" class="btn btn-primary">Submit</button>
+                        <button type="submit"  class="btn btn-primary btn-lg login-button btn-sm">Sign in</button>
                         <button type="button" class="close bd-dark" data-dismiss="modal" aria-label="Close" style="color:white">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -402,13 +422,14 @@
 </div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="js/index.js" type="text/javascript"></script>
-<script src="js/registration.js" type="text/javascript"></script>
-<script src="js/login.js" type="text/javascript"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>-->
+<!--<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>-->
+<!--<script src="http://code.jquery.com/jquery-3.4.1.js"></script>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+<!--<script src="js/index.js" type="text/javascript"></script>-->
+<!--<script src="js/registration.js" type="text/javascript"></script>-->
 </body>
 </html>
