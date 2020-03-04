@@ -31,18 +31,4 @@ public class UserController {
             return answer;
         }
     }
-
-    @RequestMapping(value = "/log_in", method = RequestMethod.POST)
-    public Byte log_in(@RequestBody String object) throws UnsupportedEncodingException {
-        byte answer = 1;
-        ArrayList<String> req = SplitURL.split(object);
-        log.warn("Got request ===" + req.toString());
-        if(req.size() == 2) {
-            User user = new User(req.get(0), req.get(1),"asdasd" ,"asdasd" , "asdasd");
-            log.error("User data is ===" + user.toString());
-            answer = userService.log_in(user);
-            return answer;
-        }else
-            return answer;
-    }
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Настройка viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body class="body">
+    <header class="container-fluid head sticky-top">
+        <nav class="navbar  navbar-expand-md navbar-toggleable-sm navbar-dark ">
+            <button type="button" class="navbar-toggler  button_collapsed" data-toggle="collapse" data-target="#navbarToggler"  aria-expanded="false"><span class=" dg-primary navbar-toggler-icon"></span></button>
+            <span class="navbar-brand mb-2 h1 text-light">WPLISLF</span>
+            <span class="selected_city ml-5 mb-2 text-light"></span>
+            <div class="collapse navbar-collapse navbar_list justify-content-center" id="navbarToggler">
+                <ul class="navbar-nav ml-auto mr-2 navigation">
+                    <li class="nav-item active">
+                        <a href="/"  class="nav-link text-light nav-item_word">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a type="button" th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger; align-self:  center "  data-toggle="modal" data-target=".bd-signUp-modal-sm">Sign up</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a type="button"  th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger "  data-toggle="modal" data-target=".bd-signIn-modal-sm">Sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light nav-item_word" th:inline="text" href="/profile" id = "userLogin">[[${#httpServletRequest.remoteUser}]]</a>
+                    </li>
+                    <li class="nav-item active" >
+                        <a th:if="${#httpServletRequest.remoteUser}" href="/logout" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger ">Exit</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>
