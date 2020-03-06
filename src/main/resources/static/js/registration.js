@@ -5,7 +5,6 @@ $(function () {
         let username = $("#upUsername").val();
         let password = $("#upPassword").val();
         let email = $("#mail").val();
-        // console.log(lastName);
         $.ajax({
             type: "POST",
             url: '/add_user',
@@ -20,10 +19,7 @@ $(function () {
         }).done((msg) => {
             if (msg == 0) {
                 $("#modalUp").modal("toggle")
-                // $(".bd-signUp-modal").css("display:none");
             }
-
-                // alert("Данные успешно отправлены");
             alert(msg);
         });
     });

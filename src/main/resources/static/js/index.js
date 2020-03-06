@@ -32,24 +32,50 @@ $(window).on('scroll', () => {
         backgroundColor: "rgba(14,26,100,"+r+')'})
 });
 
-//при нажатии на ссылку
-$(".navbar-collapse>ul>li>a").click(() => {
-    //если она не имеет класс dropdown-toggle
-    if (!$(this).hasClass("dropdown-toggle")) {
-        //то закрыть меню
+$(function () {
+    $(".navbar-collapse>ul>li>a").click(() => {
+        if (!$(this).hasClass("dropdown-toggle"))
+            $(".navbar-collapse").collapse('hide');
+    });
+});
+
+$(function () {
+    $(".navbar-collapse>ul>li>select").change(() => {
         $(".navbar-collapse").collapse('hide');
-    }
+    });
 });
 
-$(".navbar-collapse>ul>li>select").change(() => {
-    $(".navbar-collapse").collapse('hide');
+$(function () {
+    $('#select').change(function() {
+        let city = $(this).val();
+        $('.selected_city').text(city);
+    });
 });
 
-$('#select').change(function() {
-    let city = $(this).val();
-    $('.selected_city').text(city);
+$(function () {
+    $('#sign_in').click(function() {
+        $("#modalIn").modal("toggle");
+    });
 });
 
-$('#sign_in').click(() => {
-    $("#modalIn").modal("toggle");
-})
+$(function () {
+    $(".checked").click(function() {
+        let book = $(this).parent().text();
+        let username = $("#userLogin").text();
+        console.log(book);
+        $.ajax({
+            type: "POST",
+            url: "/add_book",
+            dataType: "text",
+            data: {
+                book: book,
+                username: username
+            }
+        }).done((msg) => {
+            if(msg) {
+                console.log("OK!");
+            }else
+                console.log("Error!");
+        });
+    });
+});

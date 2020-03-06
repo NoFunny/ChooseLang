@@ -22,5 +22,4 @@ public interface UserRepository extends CrudRepository<User, Long> {
     @Transactional
     void deleteByUsername(String username);
 
-//    ArrayList<User> findAllByRoles(Set<Role> roles);
 }
