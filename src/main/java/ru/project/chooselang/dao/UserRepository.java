@@ -12,10 +12,6 @@ import java.util.Set;
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
     User findByUsername(String username);
-//    User findByEmail(String username);
-//    User findByFirstNameAndLastName(String username);
-
-//    boolean existsByBook(String book);
 
     boolean existsByEmail(String email);
 
@@ -26,5 +22,4 @@ public interface UserRepository extends CrudRepository<User, Long> {
     @Transactional
     void deleteByUsername(String username);
 
-//    ArrayList<User> findAllByRoles(Set<Role> roles);
 }

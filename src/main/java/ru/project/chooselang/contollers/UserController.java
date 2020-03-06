@@ -44,22 +44,6 @@ public class UserController {
     public User getFullName(@RequestBody String object) throws UnsupportedEncodingException {
         ArrayList<String> req = SplitURL.split(object);
         log.warn("Got request ===" + req.toString());
-        User user = userService.getFullName(req.get(0));
-        if(user != null) {
-            return user;
-        }else{
-            return null;
-        }
+        return userService.getFullName(req.get(0));
     }
-
-//    @RequestMapping(value = "/add_book", method = RequestMethod.POST)
-//    public Byte addBook(@RequestBody String object) throws UnsupportedEncodingException {
-//        byte answer = 1;
-//        ArrayList<String> req = SplitURL.split(object);
-//        log.warn("Got request ===" + req.toString());
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//
-//        answer = userService.addBook(req.get(0));
-//        return answer;
-//    }
 }

@@ -48,7 +48,6 @@ $(function () {
 $(function () {
     $('#select').change(function() {
         let city = $(this).val();
-        // console.log("123");
         $('.selected_city').text(city);
     });
 });

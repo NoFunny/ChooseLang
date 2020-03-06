@@ -54,15 +54,6 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
-//    @Transactional
-//    public Byte addBook(String book) {
-//        if(userRepository.existsByBook(user.getBook())) {
-//            return 1;
-//        }
-//        user.setBook(book);
-//        return 0;
-//    }
-
     @Transactional
     public Byte log_in(User user) {
         if(!userRepository.existsByUsername(user.getUsername())) {
