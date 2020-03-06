@@ -12,6 +12,10 @@ import java.util.Set;
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
     User findByUsername(String username);
+//    User findByEmail(String username);
+//    User findByFirstNameAndLastName(String username);
+
+//    boolean existsByBook(String book);
 
     boolean existsByEmail(String email);
 

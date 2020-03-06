@@ -7,7 +7,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -27,6 +29,11 @@ public class User implements UserDetails {
     protected String password;
     private boolean active;
     private String iconUrl;
+
+//    @ElementCollection(targetClass = Book.class, fetch = FetchType.EAGER)
+//    @CollectionTable(name = "user_books", joinColumns = @JoinColumn(name = "user_id"))
+//    @Enumerated(EnumType.STRING)
+//    private List<Book> book;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role",joinColumns = @JoinColumn(name = "user_id"))
