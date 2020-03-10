@@ -25,10 +25,9 @@ public class AvgSalary {
 
     public AvgSalary(String lang, String city, String lvl, String averageSalary){
         this.lang = lang;
-        this.city=city;
-        this.lvl = lvl;
+        this.city = city;
+        this.lvl = lvl ;
         this.averageSalary = averageSalary;
     }
-
 
 }

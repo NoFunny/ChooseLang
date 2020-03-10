@@ -1,14 +1,15 @@
 package ru.project.chooselang.api.entities;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.LinkedList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class VacanciesAnswer {
     private List<Vacancy> vacancies = new LinkedList<>();
     private Integer found;

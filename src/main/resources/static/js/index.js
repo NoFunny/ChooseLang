@@ -49,3 +49,26 @@ $('#select').change(function() {
     let city = $(this).val();
     $('.selected_city').text(city);
 });
+
+$(document).ready(() => {
+    console.log("123");
+    let lang = "c++";
+    let area = "NSK";
+    let lvl = "Junior";
+    $.ajax({
+        type: "POST",
+        url: '/getSalary',
+        dataType: "text",
+        data: {
+            lang : lang,
+            area : area,
+            lvl : lvl,
+        }
+    }).done((msg) => {
+       if(msg) {
+           console.log("OK!");
+       }else{
+           console.log("ERROR");
+       }
+    })
+});

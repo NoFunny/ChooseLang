@@ -24,17 +24,21 @@ public class SalaryRefresher {
 
         for (int i = 0; i<vacanciesCount/90; i++) {
             parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(RequestHandler.hhVacancyAnswerSalaries(lang,area,level,i,90)));
+            log.info("LOG = " + parsedSalaries);
         }
         for (int i:parsedSalaries){
             averageSalary+=i;
         }
         averageSalary = averageSalary/parsedSalaries.size();
-
-        if(salaryService.checkSalary(lang,area,level)){
-
-        }
+        log.info("LOG = " + String.valueOf(averageSalary));
+//        if(salaryService.checkSalary(lang,area,level)){
+//
+//        }
 
         AvgSalary avgSalary = new AvgSalary(lang,alias,level, Integer.toString(averageSalary));
+//        log.info("LOG_1= " + avgSalary.toString());
+        salaryService.createSalary(avgSalary);
+
     }
 
 

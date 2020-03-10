@@ -34,10 +34,10 @@ public class SalaryParser {
                             parsedsalaries.add(vacancy.getSalary().getFrom()/5);
                             break;
                         case "KZT":
-                            parsedsalaries.add(vacancy.getSalary().getFrom());
+                            parsedsalaries.add(vacancy.getSalary().getFrom()*5);
                             break;
                         case "RUR":
-                            parsedsalaries.add(vacancy.getSalary().getFrom()*3);
+                            parsedsalaries.add(vacancy.getSalary().getFrom());
                             break;
                         case "USD":
                             parsedsalaries.add(vacancy.getSalary().getFrom()*66);
