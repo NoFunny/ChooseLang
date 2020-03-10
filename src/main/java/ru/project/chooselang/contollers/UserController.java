@@ -1,15 +1,10 @@
 package ru.project.chooselang.contollers;
 
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
-import netscape.javascript.JSObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import ru.project.chooselang.api.ApiHandler;
 import ru.project.chooselang.entity.User;
-import ru.project.chooselang.services.SalaryService;
 import ru.project.chooselang.services.UserService;
 import ru.project.chooselang.utils.SplitURL;
 
@@ -21,7 +16,8 @@ import java.util.ArrayList;
 public class UserController {
     @Autowired
     UserService userService;
-    SalaryService salaryService;
+    @Autowired
+    ApiHandler apiHandler;
 
     @RequestMapping(value = "/add_user", method = RequestMethod.POST)
     public Byte add_user(@RequestBody String object) throws UnsupportedEncodingException {
@@ -58,9 +54,8 @@ public class UserController {
         byte answer = 1;
         ArrayList<String> req = SplitURL.split(object);
         log.warn("Got request ===" + req.toString());
-        ApiHandler.refreshSalariesDatabase();
+        apiHandler.refreshSalariesDatabase();
 
-//        salaryService.createSalary(req.get(0));
         return 1;
     }
 }

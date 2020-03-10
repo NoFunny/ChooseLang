@@ -14,29 +14,40 @@ import java.util.LinkedList;
 @Slf4j
 @Component
 public class SalaryRefresher {
+    @Autowired
+    SalaryService salaryService;
 
-
-    public static void refreshSalary(String lang, String area, String level, String alias) throws IOException {
+    public void refreshSalary(String lang, String area, String level, String alias) throws IOException {
         LinkedList<Integer> parsedSalaries = new LinkedList<>();
         int vacanciesCount = getVacanciesCount(lang,area,level);
         int averageSalary = 0;
-        SalaryService salaryService = new SalaryService();
-
-        for (int i = 0; i<vacanciesCount/90; i++) {
-            parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(RequestHandler.hhVacancyAnswerSalaries(lang,area,level,i,90)));
+        if(vacanciesCount>90){
+            for (int i = 0; i<vacanciesCount/90; i++) {
+                VacanciesAnswer vacanciesAnswer;
+                vacanciesAnswer = RequestHandler.hhVacancyAnswerSalaries(lang,area,level,i,90);
+                parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(vacanciesAnswer));
+                //parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(RequestHandler.hhVacancyAnswerSalaries(lang,area,level,i,90)));
+                log.info("Parsed Salaries is ------- " + parsedSalaries);
+            }
+        }
+        else {
+            VacanciesAnswer vacanciesAnswer;
+            vacanciesAnswer = RequestHandler.hhVacancyAnswerSalaries(lang,area,level,0,vacanciesCount);
+            parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(vacanciesAnswer));
+            //parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(RequestHandler.hhVacancyAnswerSalaries(lang,area,level,i,90)));
             log.info("LOG = " + parsedSalaries);
         }
         for (int i:parsedSalaries){
             averageSalary+=i;
         }
         averageSalary = averageSalary/parsedSalaries.size();
-        log.info("LOG = " + String.valueOf(averageSalary));
+        log.info("LOG = " + averageSalary);
 //        if(salaryService.checkSalary(lang,area,level)){
 //
 //        }
 
         AvgSalary avgSalary = new AvgSalary(lang,alias,level, Integer.toString(averageSalary));
-//        log.info("LOG_1= " + avgSalary.toString());
+        log.info("LOG_1= " + avgSalary.toString());
         salaryService.createSalary(avgSalary);
 
     }

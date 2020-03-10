@@ -24,7 +24,7 @@ public class RequestHandler {
         ObjectMapper objectMapper = new ObjectMapper();
         String url = "https://api.hh.ru/vacancies?text=" + lang + " " + level + "&per_page=" + perPage+ "&page=" + page;
         if (area != null && !area.equals("-")) {
-            url += "&area" + area;
+            url += "&area=" + area;
         }
         return objectMapper.readValue(restTemplate.exchange(url, HttpMethod.GET, entity,String.class).getBody(),VacanciesAnswer.class);
     }

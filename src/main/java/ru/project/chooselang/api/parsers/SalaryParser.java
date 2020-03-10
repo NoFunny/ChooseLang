@@ -14,7 +14,7 @@ public class SalaryParser {
     public static Integer getAverageSalaryFromAnswer(VacanciesAnswer vacanciesAnswer){
         int averageSalaryFromPage=0;
         List<Integer> parsedsalaries = new LinkedList<>();
-        for (Vacancy vacancy:vacanciesAnswer.getVacancies()){
+        for (Vacancy vacancy:vacanciesAnswer.getItems()){
             if (vacancy.getSalary()!=null){
                 if (vacancy.getSalary().getFrom()!=null){
                     switch (vacancy.getSalary().getCurrency()){
@@ -51,6 +51,7 @@ public class SalaryParser {
         for (Integer parsedsalary : parsedsalaries) {
             averageSalaryFromPage += parsedsalary;
         }
-        return averageSalaryFromPage;
+        log.warn("Salaries = " + parsedsalaries.toString());
+        return averageSalaryFromPage/parsedsalaries.size();
     }
 }
