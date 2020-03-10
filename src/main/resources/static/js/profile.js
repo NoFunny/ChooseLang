@@ -17,11 +17,13 @@ $(document).ready (() => {
        }
    });
    $.ajax({
-       type: "GET",
-       url: "/getBook",
+       type: "POST",
+       url: "/get_book",
        dataType: "text",
        data: {
-
+            username : username
        }
-   })
+   }).done((msg) => {
+      console.log(msg);
+   });
 });

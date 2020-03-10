@@ -10,7 +10,10 @@ import ru.project.chooselang.dao.UserRepository;
 import ru.project.chooselang.entity.*;
 
 import javax.transaction.Transactional;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Set;
+
 @Slf4j
 @Service
 public class UserService implements UserDetailsService {
@@ -52,6 +55,25 @@ public class UserService implements UserDetailsService {
             return null;
         }
         return user;
+    }
+
+    @Transactional
+    public byte addBook(String book, String username) {
+        if(userRepository.existsByUsername(username)) {
+            User user = userRepository.findByUsername(username);
+            user.setBooks(Collections.singleton(new Book(book)));
+            return 0;
+        }
+        return 1;
+    }
+
+    @Transactional
+    public Set<Book> getBook(String username) {
+        if(userRepository.existsByUsername(username)) {
+            User user = userRepository.findByUsername(username);
+            return user.getBooks();
+        }
+        return null;
     }
 
     @Transactional
