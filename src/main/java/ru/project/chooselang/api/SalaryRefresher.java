@@ -24,17 +24,11 @@ public class SalaryRefresher {
         if (vacanciesCount>1){
             if(vacanciesCount>90){
                 for (int i = 0; i<vacanciesCount/90; i++) {
-    //                VacanciesAnswer vacanciesAnswer;
-    //                vacanciesAnswer = RequestHandler.hhVacancyAnswerSalaries(lang,area,level,i,90);
-    //                parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(vacanciesAnswer));
                     parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(RequestHandler.hhVacancyAnswerSalaries(lang,area,level,i,90)));
                     log.info("Parsed Salaries is ------- " + parsedSalaries);
                 }
             }
             else {
-    //            VacanciesAnswer vacanciesAnswer;
-    //            vacanciesAnswer = RequestHandler.hhVacancyAnswerSalaries(lang,area,level,0,vacanciesCount);
-    //            parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(vacanciesAnswer));
                 parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(RequestHandler.hhVacancyAnswerSalaries(lang,area,level,0, vacanciesCount)));
                 log.info("LOG = " + parsedSalaries);
             }

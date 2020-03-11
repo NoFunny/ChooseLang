@@ -54,14 +54,6 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
-    @Transactional
-    public Byte log_in(User user) {
-        if(!userRepository.existsByUsername(user.getUsername())) {
-            return 1;
-        }
-        return 0;
-    }
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         System.out.println("Username = " + username);
