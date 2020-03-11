@@ -21,30 +21,36 @@ public class SalaryRefresher {
         LinkedList<Integer> parsedSalaries = new LinkedList<>();
         int vacanciesCount = getVacanciesCount(lang,area,level);
         int averageSalary = 0;
-        if(vacanciesCount>90){
-            for (int i = 0; i<vacanciesCount/90; i++) {
-                VacanciesAnswer vacanciesAnswer;
-                vacanciesAnswer = RequestHandler.hhVacancyAnswerSalaries(lang,area,level,i,90);
-                parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(vacanciesAnswer));
-                //parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(RequestHandler.hhVacancyAnswerSalaries(lang,area,level,i,90)));
-                log.info("Parsed Salaries is ------- " + parsedSalaries);
+        if (vacanciesCount>1){
+            if(vacanciesCount>90){
+                for (int i = 0; i<vacanciesCount/90; i++) {
+    //                VacanciesAnswer vacanciesAnswer;
+    //                vacanciesAnswer = RequestHandler.hhVacancyAnswerSalaries(lang,area,level,i,90);
+    //                parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(vacanciesAnswer));
+                    parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(RequestHandler.hhVacancyAnswerSalaries(lang,area,level,i,90)));
+                    log.info("Parsed Salaries is ------- " + parsedSalaries);
+                }
             }
+            else {
+    //            VacanciesAnswer vacanciesAnswer;
+    //            vacanciesAnswer = RequestHandler.hhVacancyAnswerSalaries(lang,area,level,0,vacanciesCount);
+    //            parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(vacanciesAnswer));
+                parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(RequestHandler.hhVacancyAnswerSalaries(lang,area,level,0, vacanciesCount)));
+                log.info("LOG = " + parsedSalaries);
+            }
+            for (int i:parsedSalaries){
+                averageSalary+=i;
+            }
+            averageSalary = averageSalary/parsedSalaries.size();
+            log.info("LOG = " + averageSalary);
+            if(averageSalary<1){
+                averageSalary = -1;
+            }
+
         }
         else {
-            VacanciesAnswer vacanciesAnswer;
-            vacanciesAnswer = RequestHandler.hhVacancyAnswerSalaries(lang,area,level,0,vacanciesCount);
-            parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(vacanciesAnswer));
-            //parsedSalaries.add(SalaryParser.getAverageSalaryFromAnswer(RequestHandler.hhVacancyAnswerSalaries(lang,area,level,i,90)));
-            log.info("LOG = " + parsedSalaries);
+            averageSalary = -1;
         }
-        for (int i:parsedSalaries){
-            averageSalary+=i;
-        }
-        averageSalary = averageSalary/parsedSalaries.size();
-        log.info("LOG = " + averageSalary);
-//        if(salaryService.checkSalary(lang,area,level)){
-//
-//        }
 
         AvgSalary avgSalary = new AvgSalary(lang,alias,level, Integer.toString(averageSalary));
         log.info("LOG_1= " + avgSalary.toString());
@@ -62,6 +68,12 @@ public class SalaryRefresher {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        if(vacancyAns!=null){
+            if (vacancyAns.getFound()>=1981){
+                vacancyAns.setFound(1981);
+            }
+        }
+
         return vacancyAns==null ? -1:vacancyAns.getFound();
     }
 

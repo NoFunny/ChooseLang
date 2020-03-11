@@ -2,6 +2,7 @@ package ru.project.chooselang.contollers;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import ru.project.chooselang.api.ApiHandler;
 import ru.project.chooselang.entity.User;
@@ -49,13 +50,13 @@ public class UserController {
 //    }
 
 
-    @RequestMapping(value = "/getSalary", method = RequestMethod.POST)
-    public byte getSalary(@RequestBody String object) throws IOException {
+    @RequestMapping(value = "/getSalary", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
+    public String getSalary(@RequestBody String object) throws IOException {
         byte answer = 1;
         ArrayList<String> req = SplitURL.split(object);
         log.warn("Got request ===" + req.toString());
         apiHandler.refreshSalariesDatabase();
 
-        return 1;
+        return apiHandler.returnCityData("BSK");
     }
 }

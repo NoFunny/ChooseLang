@@ -52,6 +52,6 @@ public class SalaryParser {
             averageSalaryFromPage += parsedsalary;
         }
         log.warn("Salaries = " + parsedsalaries.toString());
-        return averageSalaryFromPage/parsedsalaries.size();
+        return parsedsalaries.size()==0 ? -1 : averageSalaryFromPage/parsedsalaries.size();
     }
 }

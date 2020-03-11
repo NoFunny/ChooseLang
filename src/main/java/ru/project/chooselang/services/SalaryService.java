@@ -21,4 +21,12 @@ public class SalaryService {
     public void createSalary(AvgSalary avgSalary) {
         salaryRepository.save(avgSalary);
     }
+
+    public void deleteAllSalaries(){
+        salaryRepository.deleteAll();
+    }
+
+    public AvgSalary findForCity(String lang, String city, String lvl){
+        return salaryRepository.findByLangAndCityAndLvl(lang, city, lvl);
+    }
 }
