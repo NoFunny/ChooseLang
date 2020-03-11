@@ -6,15 +6,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * Controller class
- * @author skwardlow
+ * @author skwardlow, NoFunny
  * @version 1.0
  */
 @Controller
 public class WebController {
 
     /**
-     *
-     * @return
+     * Mapping for index page method
+     * @return index page
      */
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
@@ -23,8 +23,8 @@ public class WebController {
     }
 
     /**
-     *
-     * @return
+     * Mapping for profile page method
+     * @return profile page
      */
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)

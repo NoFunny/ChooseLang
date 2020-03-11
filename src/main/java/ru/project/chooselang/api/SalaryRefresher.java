@@ -29,7 +29,8 @@ public class SalaryRefresher {
     SalaryService salaryService;
 
     /**
-     *
+     * This method refresh salary in repository
+     * depending on the number of salaries received
      * @param lang
      * @param area
      * @param level
@@ -73,7 +74,8 @@ public class SalaryRefresher {
     }
 
     /**
-     *
+     * This method send request to hh api and compute
+     * count vacancies and return their number
      * @param lang
      * @param area
      * @param level

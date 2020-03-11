@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 
 /**
  * DAO repository for User objects
- * @author skwardlow
+ * @author skwardlow, NoFunny
  * @version 1.0
  * @see CrudRepository
  * @see Repository
@@ -19,15 +19,15 @@ import javax.transaction.Transactional;
 public interface UserRepository extends CrudRepository<User, Long> {
 
     /**
-     *
+     * Searching user object in DB by:
      * @param username
-     * @return
+     * @return User object
      */
 
     User findByUsername(String username);
 
     /**
-     *
+     * Checking exists of user by:
      * @param email
      * @return
      */
@@ -35,7 +35,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
     boolean existsByEmail(String email);
 
     /**
-     *
+     * Checking exists of user by:
      * @param username
      * @return
      */
@@ -43,7 +43,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
     boolean existsByUsername(String username);
 
     /**
-     *
+     * Checking exists of user by:
      * @param username
      * @param email
      * @return
@@ -52,7 +52,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
     boolean existsByUsernameAndEmail(String username, String email);
 
     /**
-     *
+     * Deleting user object in DB by:
      * @param username
      */
 

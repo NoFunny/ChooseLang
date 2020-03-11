@@ -26,7 +26,7 @@ public class SalaryService {
     private SalaryRepository salaryRepository;
 
     /**
-     *
+     * Create salary method
      * @param avgSalary
      */
 
@@ -35,12 +35,16 @@ public class SalaryService {
     }
 
 
+    /**
+     * Deleting salary object in DB method
+     */
+
     public void deleteAllSalaries(){
         salaryRepository.deleteAll();
     }
 
     /**
-     *
+     * Find avgSalary method by:
      * @param lang
      * @param city
      * @param lvl

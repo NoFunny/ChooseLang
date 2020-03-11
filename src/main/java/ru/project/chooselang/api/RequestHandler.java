@@ -25,7 +25,8 @@ import java.util.Arrays;
 public class RequestHandler {
 
     /**
-     *
+     * This method forms request to hh api
+     * by lang, area and level, return object VacanciesAnswer
      * @param lang
      * @param area
      * @param level

@@ -36,7 +36,7 @@ public class UserController {
     ApiHandler apiHandler;
 
     /**
-     *
+     * Registration method for creating a new user
      * @param object
      * @return
      * @throws UnsupportedEncodingException
@@ -58,7 +58,7 @@ public class UserController {
     }
 
     /**
-     *
+     * Update salary DB method
      * @throws IOException
      */
 
@@ -68,7 +68,7 @@ public class UserController {
     }
 
     /**
-     *
+     * Get Salary from DB method
      * @param object
      * @return
      * @throws IOException
@@ -84,7 +84,7 @@ public class UserController {
     }
 
     /**
-     *
+     * Get fullname user from DB method
      * @param object
      * @return
      * @throws UnsupportedEncodingException

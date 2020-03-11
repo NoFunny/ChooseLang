@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class MvcConfig implements WebMvcConfigurer {
 
     /**
-     *
+     * addViewControllers method setting up a login page as a default, provided by MVC
      * @param registry
      */
 

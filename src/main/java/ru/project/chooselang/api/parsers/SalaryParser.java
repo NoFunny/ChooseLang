@@ -19,7 +19,7 @@ import java.util.List;
 public class SalaryParser {
 
     /**
-     *
+     * This method get avarage salary from page
      * @param vacanciesAnswer
      * @return
      */

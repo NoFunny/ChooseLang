@@ -23,7 +23,14 @@ import java.util.*;
 @Component
 public class ApiHandler {
 
+    /**
+     * List available languages
+     */
     private static final List<String> langs = Arrays.asList("Python", "Java", "C", "PHP", "JS", "Ruby", "Objective+C");
+
+    /**
+     * List existing levels programmers
+     */
     private static final List<String> levels = Arrays.asList("Junior","Middle","Senior");
 
     /**
@@ -39,7 +46,7 @@ public class ApiHandler {
     SalaryService salaryService;
 
     /**
-     *
+     *  This method refresh salaries DB
      * @throws IOException
      */
 
@@ -63,7 +70,7 @@ public class ApiHandler {
     }
 
     /**
-     *
+     * This method return data by city
      * @param city
      * @return
      * @throws JsonProcessingException

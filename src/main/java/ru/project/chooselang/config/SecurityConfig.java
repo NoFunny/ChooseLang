@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 /**
  * WebSecurityConfig class adding and limit rights for users that asks
  * access to methods and web-pages
- * @author skwardlow
+ * @author skwardlow, NoFunny
  * @version 1.0
  * @see WebSecurityConfigurerAdapter
  */
@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private DataSource dataSource;
 
     /**
-     *
+     * This method is limit rights for users, that request something from server.
      * @param http
      * @throws Exception
      */
@@ -55,7 +55,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /**
-     *
+     * This method configuring default datasource
+     * no params expected. running automatically
      * @param auth
      * @throws Exception
      */

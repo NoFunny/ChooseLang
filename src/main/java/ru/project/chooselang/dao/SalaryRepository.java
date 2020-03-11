@@ -17,7 +17,7 @@ import ru.project.chooselang.api.entities.AvgSalary;
 public interface SalaryRepository extends CrudRepository<AvgSalary,Long> {
 
     /**
-     *
+     * Checking exists of salary by:
      * @param lang
      * @param city
      * @param lvl
@@ -27,11 +27,11 @@ public interface SalaryRepository extends CrudRepository<AvgSalary,Long> {
     boolean existsByLangAndCityAndLvl(String lang, String city, String lvl);
 
     /**
-     *
+     * Searching Salary object in DB by:
      * @param lang
      * @param city
      * @param lvl
-     * @return
+     * @return AvgSalary object
      */
 
     AvgSalary findByLangAndCityAndLvl(String lang, String city, String lvl);

@@ -31,7 +31,7 @@ public class UserService implements UserDetailsService {
     private UserRepository userRepository;
 
     /**
-     *
+     * Registration user method
      * @param user
      * @return
      */
@@ -61,7 +61,7 @@ public class UserService implements UserDetailsService {
     }
 
     /**
-     *
+     * Get fullname user method
      * @param username
      * @return
      */
@@ -79,7 +79,7 @@ public class UserService implements UserDetailsService {
     }
 
     /**
-     *
+     * load user by username automatically generated method
      * @param username
      * @return
      * @throws UsernameNotFoundException

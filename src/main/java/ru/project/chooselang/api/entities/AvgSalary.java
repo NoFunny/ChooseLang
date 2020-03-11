@@ -28,7 +28,7 @@ public class AvgSalary {
     private String averageSalary;
 
     /**
-     *
+     * Constructor AvgSalary object
      * @param lang
      * @param city
      * @param lvl
