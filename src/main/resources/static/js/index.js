@@ -58,6 +58,7 @@ $(function () {
     });
 });
 
+
 $(function () {
     $(".checked").click(function() {
         let book = $(this).parent().text();
