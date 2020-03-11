@@ -19,6 +19,7 @@ import ru.project.chooselang.utils.SplitURL;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Set;
 
 @Slf4j
@@ -62,7 +63,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/get_book", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Set<Book> getBook(@RequestBody String object) throws UnsupportedEncodingException {
+    public Collection<Book> getBook(@RequestBody String object) throws UnsupportedEncodingException {
         ArrayList<String> req = SplitURL.split(object);
         return userService.getBook(req.get(0));
     }

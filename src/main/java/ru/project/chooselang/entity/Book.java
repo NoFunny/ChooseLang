@@ -6,8 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -23,7 +21,8 @@ public class Book {
 
     private String name;
 
-    @ManyToMany(mappedBy = "books")
+    @ManyToMany( fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "u_books")
     Set<User> user;
 
     public Book(String name) {

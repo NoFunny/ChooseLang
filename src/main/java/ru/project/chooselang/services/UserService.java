@@ -61,27 +61,21 @@ public class UserService implements UserDetailsService {
     public byte addBook(String book, String username) {
         if(userRepository.existsByUsername(username)) {
             User user = userRepository.findByUsername(username);
-            user.setBooks(Collections.singleton(new Book(book)));
+            Set<Book> nehachu= user.getBooks();
+            nehachu.add(new Book(book));
+            user.setBooks(nehachu);
             return 0;
         }
         return 1;
     }
 
     @Transactional
-    public Set<Book> getBook(String username) {
+    public Collection<Book> getBook(String username) {
         if(userRepository.existsByUsername(username)) {
             User user = userRepository.findByUsername(username);
             return user.getBooks();
         }
         return null;
-    }
-
-    @Transactional
-    public Byte log_in(User user) {
-        if(!userRepository.existsByUsername(user.getUsername())) {
-            return 1;
-        }
-        return 0;
     }
 
     @Override
