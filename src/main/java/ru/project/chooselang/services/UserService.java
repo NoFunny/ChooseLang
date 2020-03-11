@@ -17,6 +17,7 @@ public class UserService implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
+
     @Transactional
     public byte addUser(User user) {
         if(userRepository.existsByEmail(user.getEmail())) {
@@ -39,6 +40,18 @@ public class UserService implements UserDetailsService {
         userRepository.save(user);
         log.error(user.toString() + " added successfully");
         return 0;
+    }
+
+    @Transactional
+    public User getFullName(String username) {
+        User user = new User();
+        if(userRepository.existsByUsername(username)) {
+            user.setFirstName((userRepository.findByUsername(username)).getFirstName());
+            user.setLastName((userRepository.findByUsername(username).getLastName()));
+        }else{
+            return null;
+        }
+        return user;
     }
 
     @Transactional

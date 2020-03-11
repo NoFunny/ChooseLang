@@ -1,21 +1,28 @@
-<!DOCTYPE HTML>
-<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Настройка viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Which programming language should i learn first?</title>
+
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-
-    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+    <script src="js/registration.js" type="text/javascript"></script>
 
 </head>
 <body class="body">
@@ -28,13 +35,26 @@
         <div class="collapse navbar-collapse navbar_list justify-content-center" id="navbarToggler">
             <ul class="navbar-nav ml-auto mr-2 navigation">
                 <li class="nav-item active">
-                    <a href="#" class="nav-link text-light nav-item_word">Home</a>
+                    <a href="#"  class="nav-link text-light nav-item_word">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <button type="button" class="nav-link btn btn-primary" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger; align-self:  center "  data-toggle="modal" data-target=".bd-signUp-modal-sm">Sign up</button>
+                    <a type="button" th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger; align-self:  center "  data-toggle="modal" data-target=".bd-signUp-modal-sm">Sign up</a>
                 </li>
                 <li class="nav-item active">
-                    <button type="button" class="nav-link btn btn-primary" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger "  data-toggle="modal" data-target=".bd-signIn-modal-sm">Sign in</button>
+                    <a type="button"  th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger "  data-toggle="modal" data-target=".bd-signIn-modal-sm">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light nav-item_word" th:inline="text" href="/profile" id = "userLogin">[[${#httpServletRequest.remoteUser}]]</a>
+                </li>
+                <li class="nav-item active" >
+                    <a th:if="${#httpServletRequest.remoteUser}" href="/logout" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger ">Exit</a>
+                </li>
+                <li>
+                    <div th:if="${param.error}">
+                        <script>
+                            alert("Такого логина и/или пароля нету");
+                        </script>
+                    </div>
                 </li>
                 <li class="nav-item active">
                     <select name="City" size="1" id="select" class="form-control select_form">
@@ -115,7 +135,7 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid" >
     <div class="container lib">
         <ul class="nav nav-tabs" id="myTab" role="tablist" >
             <li class="nav-item">
@@ -146,7 +166,168 @@
                 <a href="#objc_tab" style="color: black; font-weight: bold; font-family: monospace; font-size: larger" class="nav-link" id="objc-tab" data-toggle="tab" role="tab" aria-controls="objc" aria-selected="false">Objective-C</a>
             </li>
         </ul>
-        <div class="tab-content" id="myTabContent">
+        <div class="tab-content" id="myTabContent" th:if="${#httpServletRequest.remoteUser}">
+            <div class="tab-pane fade active show" id="python_tab" role="tabpanel" aria-labelledby="python_tab">
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col">Books
+                            <ul class="lib_list">
+                                <li><input type="checkbox" class="checked">Python Crash Course, Eric Matthes</li>
+                                <li><input type="checkbox" class="checked">Head-First Python, Paul Barry</li>
+                                <li><input type="checkbox" class="checked">Invent Your Own Computer Games with Python, Al Sweigart</li>
+                                <li><input type="checkbox" class="checked">Think Python: How to Think Like a Computer Scientist, Allen B. Downey</li>
+                                <li><input type="checkbox" class="checked">Effective Computation in Physics: Field Guide to Research with Python, Anthony Scopatz, Kathryn D. Huff</li>
+                                <li><input type="checkbox" class="checked">Learn Python 3 the Hard Way, Zed A. Shaw</li>
+                                <li><input type="checkbox" class="checked">Real Python Course, Real Python Team</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="java_tab" role="tabpanel" aria-labelledby="java_tab" th:if="${#httpServletRequest.remoteUser}">
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col">Books
+                            <ul class="lib_list">
+                                <li><input type="checkbox" class="checked">Эффективная Java – Джошуа Блох</li>
+                                <li><input type="checkbox" class="checked">Clean Code: A Handbook of Agile Software Craftsmanship – Robert C. Martin</li>
+                                <li><input type="checkbox" class="checked">Java. Библиотека профессионала – Кей С. Хорстманн</li>
+                                <li><input type="checkbox" class="checked">Head First. Паттерны проектирования – Эрик Фримен, Элизабет Робсон</li>
+                                <li><input type="checkbox" class="checked">Spring в действии – Крейг Уоллс</li>
+                                <li><input type="checkbox" class="checked">Test Driven: TDD and Acceptance TDD for Java Developers – Lasse Koskela</li>
+                                <li><input type="checkbox" class="checked">Изучаем Java – Кэти Сиерра, Берт Бейтс</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="c_tab" role="tabpanel" aria-labelledby="c-tab" th:if="${#httpServletRequest.remoteUser}">
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col">Books
+                            <ul class="lib_list">
+                                <li><input type="checkbox" class="checked">The C Book</li>
+                                <li><input type="checkbox" class="checked">C Elements of Style</li>
+                                <li><input type="checkbox" class="checked">The GNU C Reference Manual</li>
+                                <li><input type="checkbox" class="checked">The GNU C Programming Tutorial</li>
+                                <li><input type="checkbox" class="checked">Essential C</li>
+                                <li><input type="checkbox" class="checked">Beej’s Guide to C Programming</li>
+                                <li><input type="checkbox" class="checked">Modern C</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="php_tab" role="tabpanel" aria-labelledby="php-tab" th:if="${#httpServletRequest.remoteUser}">
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col">Books
+                            <ul class="lib_list">
+                                <li><input type="checkbox" class="checked">Самоучитель PHP 7 – Игорь Симдянов</li>
+                                <li><input type="checkbox" class="checked">PHP 7 в подлиннике – Дмитрий Котеров</li>
+                                <li><input type="checkbox" class="checked">Изучаем PHP 7 – Дэвид Скляр</li>
+                                <li><input type="checkbox" class="checked">PHP. Правильный путь</li>
+                                <li><input type="checkbox" class="checked">PHP 7 Zend Certification Study Guide</li>
+                                <li><input type="checkbox" class="checked">Learning PHP Design Patterns</li>
+                                <li><input type="checkbox" class="checked">PHP7 для начинающих с пошаговыми инструкциями Майк МакГрат</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="cpp_tab" role="tabpanel" aria-labelledby="cpp-tab" th:if="${#httpServletRequest.remoteUser}">
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col">Books
+                            <ul class="lib_list">
+                                <li><input type="checkbox" class="checked">«Программирование: принципы и практика использования C++» (Бьёрн Страуструп) </li>
+                                <li><input type="checkbox" class="checked">«C++ Primer»* (Стэнли Липпман, Жозе Лажуа и Барбара Э. Му)</li>
+                                <li><input type="checkbox" class="checked">«Обзор С++» (Бьёрн Страуструп)</li>
+                                <li><input type="checkbox" class="checked">«Accelerated C++» («Ускоренный С++») (Эндрю Кёниг и Барбара Му)</li>
+                                <li><input type="checkbox" class="checked">«Thinking in C++» («Мышление на С++») (Брюс Эккель)</li>
+                                <li><input type="checkbox" class="checked">«Effective C++» («Эффективное использование C++») (Скотт Майерс).</li>
+                                <li><input type="checkbox" class="checked">«Effective Modern C++» («Эффективный и современный С++») (Скотт Майерс).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="js_tab" role="tabpanel" aria-labelledby="js-tab" th:if="${#httpServletRequest.remoteUser}">
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col">Books
+                            <ul class="lib_list">
+                                <li><input type="checkbox" class="checked">«JavaScript. Сильные стороны»</li>
+                                <li><input type="checkbox" class="checked">«Вы не знаете JS»</li>
+                                <li><input type="checkbox" class="checked">«Выразительный Javascript»</li>
+                                <li><input type="checkbox" class="checked">«Сила JavaScript. 68 способов эффективного использования JS»</li>
+                                <li><input type="checkbox" class="checked">«JavaScript. Подробное руководство»</li>
+                                <li><input type="checkbox" class="checked">«Секреты JavaScript ниндзя»</li>
+                                <li><input type="checkbox" class="checked">«JavaScript. Основы»</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="csh_tab" role="tabpanel" aria-labelledby="csh-tab" th:if="${#httpServletRequest.remoteUser}">
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col">Books
+                            <ul class="lib_list">
+                                <li><input type="checkbox" class="checked">C# Programming Yellow Book</li>
+                                <li><input type="checkbox" class="checked">Fundamentals of Computer Programming with C#</li>
+                                <li><input type="checkbox" class="checked">C# Programming</li>
+                                <li><input type="checkbox" class="checked">.NET Book Zero</li>
+                                <li><input type="checkbox" class="checked">C# 7.0. Карманный справочник</li>
+                                <li><input type="checkbox" class="checked">Microsoft Visual C#. Подробное руководство</li>
+                                <li><input type="checkbox" class="checked">Introduction to programming and the C# language</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="ruby_tab" role="tabpanel" aria-labelledby="ruby-tab" th:if="${#httpServletRequest.remoteUser}">
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col">Books
+                            <ul class="lib_list">
+                                <li><input type="checkbox" class="checked">Ruby Best Practices</li>
+                                <li><input type="checkbox" class="checked">Путь Ruby</li>
+                                <li><input type="checkbox" class="checked">Learn Ruby the Hard Way</li>
+                                <li><input type="checkbox" class="checked">Head First. Изучаем Ruby</li>
+                                <li><input type="checkbox" class="checked">Ruby Essentials</li>
+                                <li><input type="checkbox" class="checked">Ruby Programming</li>
+                                <li><input type="checkbox" class="checked">Ruby on Rails для начинающих. Изучаем разработку веб-приложений на основе Rails</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="tab-pane fade" id="objc_tab" role="tabpanel" aria-labelledby="objc-tab" th:unless="${#httpServletRequest.remoteUser}">
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col">Books
+                            <ul class="lib_list">
+                                <li>Програмирование на Objective-C Cтивен Кочан</li>
+                                <li>Iphone SDK Разработка приложений Джонатан Здиарски</li>
+                                <li>Objective-C 2.0 и программирование для Mac Марк Далримпл</li>
+                                <li>Разработка приложений под iPhone. Полное руководство</li>
+                                <li>Head First iPhone Development</li>
+                                <li>Objective-C Programming For Dummies
+                                </li>
+                                <li>Learn Objective-C on the Mac (Learn Series)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="myTabContent" th:unless="${#httpServletRequest.remoteUser}">
             <div class="tab-pane fade active show" id="python_tab" role="tabpanel" aria-labelledby="python_tab">
                 <div class="col-xl-6">
                     <div class="row">
@@ -164,7 +345,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="java_tab" role="tabpanel" aria-labelledby="java_tab">
+            <div class="tab-pane fade" id="java_tab" role="tabpanel" aria-labelledby="java_tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
                         <div class="col">Books
@@ -181,7 +362,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="c_tab" role="tabpanel" aria-labelledby="c-tab">
+            <div class="tab-pane fade" id="c_tab" role="tabpanel" aria-labelledby="c-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
                         <div class="col">Books
@@ -198,7 +379,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="php_tab" role="tabpanel" aria-labelledby="php-tab">
+            <div class="tab-pane fade" id="php_tab" role="tabpanel" aria-labelledby="php-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
                         <div class="col">Books
@@ -215,7 +396,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="cpp_tab" role="tabpanel" aria-labelledby="cpp-tab">
+            <div class="tab-pane fade" id="cpp_tab" role="tabpanel" aria-labelledby="cpp-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
                         <div class="col">Books
@@ -232,7 +413,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="js_tab" role="tabpanel" aria-labelledby="js-tab">
+            <div class="tab-pane fade" id="js_tab" role="tabpanel" aria-labelledby="js-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
                         <div class="col">Books
@@ -249,7 +430,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="csh_tab" role="tabpanel" aria-labelledby="csh-tab">
+            <div class="tab-pane fade" id="csh_tab" role="tabpanel" aria-labelledby="csh-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
                         <div class="col">Books
@@ -266,7 +447,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="ruby_tab" role="tabpanel" aria-labelledby="ruby-tab">
+            <div class="tab-pane fade" id="ruby_tab" role="tabpanel" aria-labelledby="ruby-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
                         <div class="col">Books
@@ -283,7 +464,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="objc_tab" role="tabpanel" aria-labelledby="objc-tab">
+            <div class="tab-pane fade" id="objc_tab" role="tabpanel" aria-labelledby="objc-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
                         <div class="col">Books
@@ -329,19 +510,19 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="firstName">First name</label>
-                        <input type="text" class="form-control" id="firstName" required="required" placeholder="First name" pattern="[А-Я][а-я]{1,15}">
+                        <input type="text" class="form-control" id="firstName" required="required" placeholder="First name" pattern="[A-Z][a-z]{1,15}">
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last name</label>
-                        <input type="text" class="form-control" id="lastName" required="required" placeholder="Last name" pattern="[А-Я][а-я]{1,15}">
+                        <input type="text" class="form-control" id="lastName" required="required" placeholder="Last name" pattern="[A-Z][a-z]{1,15}">
                     </div>
                     <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" id="username" required="required" placeholder="Name" pattern="[0-9a-zA-Z]{6,12}">
+                        <label for="upUsername">Username</label>
+                        <input type="text" class="form-control" id="upUsername" required="required" placeholder="Name" pattern="[0-9a-zA-Z]{6,12}">
                     </div>
                     <div class="form-group">
-                       <label for="password">Password</label>
-                       <input type="password" class="form-control" id="password" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
+                       <label for="upPassword">Password</label>
+                       <input type="password" class="form-control" id="upPassword" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
                     </div>
                     <div class="form-group">
                        <label for="repeat_pass">Repeat password</label>
@@ -375,22 +556,22 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <form method="post">
+            <form action="/index" method="post">
                 <div>
                     <div class="modal-body">
                       <div class="form-group">
-                          <label for="inUsername">Username</label>
-                          <input type="text" id="inUsername" required="required" placeholder="Name" pattern="[0-9a-zA-Z]{6,12}">
+                          <label for="username">Username</label>
+                          <input type="text" id="username" name="username" required="required" placeholder="Name" pattern="[0-9a-zA-Z]{6,12}">
                       </div>
                       <div class="form-group">
-                          <label for="inPassword">First name</label>
-                          <input type="password" id="inPassword" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
+                          <label for="password">First name</label>
+                          <input type="password" id="password" name="password" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
                       </div>
                     </div>
                 </div>
                 <div>
                     <div class="modal-footer">
-                        <button type="button" id="sign_in" class="btn btn-primary">Submit</button>
+                        <button type="submit"  class="btn btn-primary btn-lg login-button btn-sm">Sign in</button>
                         <button type="button" class="close bd-dark" data-dismiss="modal" aria-label="Close" style="color:white">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -402,13 +583,14 @@
 </div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="js/index.js" type="text/javascript"></script>
-<script src="js/registration.js" type="text/javascript"></script>
-<script src="js/login.js" type="text/javascript"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>-->
+<!--<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>-->
+<!--<script src="http://code.jquery.com/jquery-3.4.1.js"></script>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+<!--<script src="js/index.js" type="text/javascript"></script>-->
+<!--<script src="js/registration.js" type="text/javascript"></script>-->
 </body>
 </html>
