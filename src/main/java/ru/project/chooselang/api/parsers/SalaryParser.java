@@ -8,9 +8,22 @@ import ru.project.chooselang.api.entities.Vacancy;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * This class nedded to parse salaries by currency
+ * @author skwardlow
+ * @version 1.0
+ */
+
 @Slf4j
 @Component
 public class SalaryParser {
+
+    /**
+     *
+     * @param vacanciesAnswer
+     * @return
+     */
+
     public static Integer getAverageSalaryFromAnswer(VacanciesAnswer vacanciesAnswer){
         int averageSalaryFromPage=0;
         List<Integer> parsedsalaries = new LinkedList<>();

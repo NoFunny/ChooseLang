@@ -11,12 +11,30 @@ import ru.project.chooselang.entity.*;
 
 import javax.transaction.Transactional;
 import java.util.Collections;
+
+/**
+ * Salary service class
+ * @author skwardlow
+ * @version 1.0
+ * @see UserDetailsService
+ */
+
 @Slf4j
 @Service
 public class UserService implements UserDetailsService {
+
+    /**
+     * Dao user repository
+     */
+
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     *
+     * @param user
+     * @return
+     */
 
     @Transactional
     public byte addUser(User user) {
@@ -42,6 +60,12 @@ public class UserService implements UserDetailsService {
         return 0;
     }
 
+    /**
+     *
+     * @param username
+     * @return
+     */
+
     @Transactional
     public User getFullName(String username) {
         User user = new User();
@@ -53,6 +77,13 @@ public class UserService implements UserDetailsService {
         }
         return user;
     }
+
+    /**
+     *
+     * @param username
+     * @return
+     * @throws UsernameNotFoundException
+     */
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

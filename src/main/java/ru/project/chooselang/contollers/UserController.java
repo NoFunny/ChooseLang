@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import ru.project.chooselang.api.ApiHandler;
-import ru.project.chooselang.dao.UserRepository;
 import ru.project.chooselang.entity.User;
 import ru.project.chooselang.services.UserService;
 import ru.project.chooselang.utils.SplitURL;
@@ -13,13 +12,35 @@ import ru.project.chooselang.utils.SplitURL;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+
+/**
+ * This class needed for REST-controller for mapping POST user requests to the server
+ * @author NoFunny
+ * @version 1.0
+ */
+
 @Slf4j
 @RestController
 public class UserController {
+
+    /**
+     * Wired userService for DAO interaction
+     */
     @Autowired
     UserService userService;
+
+    /**
+     * Wired apiHandler for DAO interaction
+     */
     @Autowired
     ApiHandler apiHandler;
+
+    /**
+     *
+     * @param object
+     * @return
+     * @throws UnsupportedEncodingException
+     */
 
     @RequestMapping(value = "/add_user", method = RequestMethod.POST)
     public Byte add_user(@RequestBody String object) throws UnsupportedEncodingException {
@@ -36,10 +57,22 @@ public class UserController {
         }
     }
 
+    /**
+     *
+     * @throws IOException
+     */
+
     @RequestMapping(value = "/updateSalary", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public void updateSalary() throws IOException {
         apiHandler.refreshSalariesDatabase();
     }
+
+    /**
+     *
+     * @param object
+     * @return
+     * @throws IOException
+     */
 
     @RequestMapping(value = "/getSalary", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public String getSalary(@RequestBody String object) throws IOException {
@@ -49,6 +82,13 @@ public class UserController {
 
         return apiHandler.returnCityData(req.get(0));
     }
+
+    /**
+     *
+     * @param object
+     * @return
+     * @throws UnsupportedEncodingException
+     */
 
     @RequestMapping(value = "/getFullName", produces = MediaType.APPLICATION_JSON_VALUE)
     public User getFullName (@RequestBody String object) throws UnsupportedEncodingException {

@@ -5,6 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * This class nedded to created Langs object
+ * @author skwardlow
+ * @version 1.0
+ */
+
 @Getter
 @Setter
 @NoArgsConstructor

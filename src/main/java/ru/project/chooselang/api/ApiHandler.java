@@ -13,6 +13,12 @@ import ru.project.chooselang.services.SalaryService;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * This class nedded to refresh salaries DB and return salaries from DB
+ * @author skwardlow
+ * @version 1.0
+ */
+
 @Slf4j
 @Component
 public class ApiHandler {
@@ -20,11 +26,22 @@ public class ApiHandler {
     private static final List<String> langs = Arrays.asList("Python", "Java", "C", "PHP", "JS", "Ruby", "Objective+C");
     private static final List<String> levels = Arrays.asList("Junior","Middle","Senior");
 
-
+    /**
+     * Wiring salaryrefresher for refreshing database
+     */
     @Autowired
     SalaryRefresher salaryRefresher;
+
+    /**
+     * Wiring salaryservise for DAO interaction
+     */
     @Autowired
     SalaryService salaryService;
+
+    /**
+     *
+     * @throws IOException
+     */
 
     public void refreshSalariesDatabase() throws IOException {
         HashMap<Integer, String> cities = new HashMap<>();
@@ -44,6 +61,13 @@ public class ApiHandler {
             }
         }
     }
+
+    /**
+     *
+     * @param city
+     * @return
+     * @throws JsonProcessingException
+     */
 
     public String returnCityData(String city) throws JsonProcessingException {
         CitySalaries citySalaries = new CitySalaries();

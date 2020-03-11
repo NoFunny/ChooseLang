@@ -11,11 +11,31 @@ import ru.project.chooselang.services.SalaryService;
 import java.io.IOException;
 import java.util.LinkedList;
 
+/**
+ * This class needed to refresh salary in page
+ * @author skwardlow
+ * @version 1.0
+ */
+
 @Slf4j
 @Component
 public class SalaryRefresher {
+
+    /**
+     * Wired salaryServise for DAO interaction
+     */
+
     @Autowired
     SalaryService salaryService;
+
+    /**
+     *
+     * @param lang
+     * @param area
+     * @param level
+     * @param alias
+     * @throws IOException
+     */
 
     public void refreshSalary(String lang, String area, String level, String alias) throws IOException {
         LinkedList<Integer> parsedSalaries = new LinkedList<>();
@@ -52,8 +72,13 @@ public class SalaryRefresher {
 
     }
 
-
-
+    /**
+     *
+     * @param lang
+     * @param area
+     * @param level
+     * @return
+     */
 
     public static Integer getVacanciesCount(String lang, String area, String level){
         VacanciesAnswer vacancyAns = null;

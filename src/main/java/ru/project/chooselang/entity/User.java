@@ -10,12 +10,23 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Set;
 
+/**
+ * User representation class
+ * @author skwardlow
+ * @version 1.0
+ * @see UserDetails
+ * @see Table
+ * @see NoArgsConstructor
+ * @see Entity
+ */
+
 @Getter
 @Setter
 @Entity
 @Table(name = "usr")
 @NoArgsConstructor
 public class User implements UserDetails {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
@@ -34,6 +45,15 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
 
+    /**
+     *
+     * @param firstName
+     * @param lastName
+     * @param email
+     * @param username
+     * @param password
+     */
+
     public User(String firstName, String lastName, String email, String username, String password){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -42,31 +62,60 @@ public class User implements UserDetails {
         this.password = password;
     }
 
+    /**
+     *
+     * @return
+     */
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return getRoles();
     }
 
+    /**
+     *
+     * @return
+     */
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
+
+    /**
+     *
+     * @return
+     */
 
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
+
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
+
     @Override
     public boolean isEnabled() {
         return true;
     }
+
+    /**
+     *
+     * @return
+     */
 
     @Override
     public String toString() {

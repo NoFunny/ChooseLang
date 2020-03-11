@@ -6,6 +6,11 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**
+ * This class nedded to created AvgSalary entity
+ * @author skwardlow
+ * @version 1.0
+ */
 @Getter
 @Setter
 @Entity
@@ -22,7 +27,13 @@ public class AvgSalary {
     private String lvl;
     private String averageSalary;
 
-
+    /**
+     *
+     * @param lang
+     * @param city
+     * @param lvl
+     * @param averageSalary
+     */
     public AvgSalary(String lang, String city, String lvl, String averageSalary){
         this.lang = lang;
         this.city = city;

@@ -4,6 +4,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * This class nedded to created Vacancy object
+ * @author skwardlow
+ * @version 1.0
+ */
+
 @Getter
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)

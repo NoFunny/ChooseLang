@@ -7,6 +7,15 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**
+ * Book representation class
+ * @author NoFunny
+ * @version 1.0
+ * @see Table
+ * @see NoArgsConstructor
+ * @see Entity
+ */
+
 @Getter
 @Setter
 @Entity
@@ -18,6 +27,11 @@ public class Book {
     Integer id;
 
     private String name;
+
+    /**
+     *
+     * @param name
+     */
 
     Book(String name) {
         this.name = name;

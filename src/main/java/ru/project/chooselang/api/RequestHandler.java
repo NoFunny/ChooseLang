@@ -14,9 +14,27 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
+/**
+ * This class nedded to send requests to hh api
+ * @author skwardlow
+ * @version 1.0
+ */
+
 @Slf4j
 @Component
 public class RequestHandler {
+
+    /**
+     *
+     * @param lang
+     * @param area
+     * @param level
+     * @param page
+     * @param perPage
+     * @return
+     * @throws IOException
+     */
+
     public static VacanciesAnswer hhVacancyAnswerSalaries(String lang, String area, String level, Integer page, Integer perPage) throws IOException {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();

@@ -11,13 +11,30 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
 import javax.sql.DataSource;
 
+/**
+ * WebSecurityConfig class adding and limit rights for users that asks
+ * access to methods and web-pages
+ * @author skwardlow
+ * @version 1.0
+ * @see WebSecurityConfigurerAdapter
+ */
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    /**
+     * Wired dataSource bean used for configuring
+     */
     @Autowired
     private DataSource dataSource;
+
+    /**
+     *
+     * @param http
+     * @throws Exception
+     */
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -36,6 +53,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();
 
     }
+
+    /**
+     *
+     * @param auth
+     * @throws Exception
+     */
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
