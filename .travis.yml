@@ -3,3 +3,9 @@ jdk:
   - openjdk11
 script:
   - gradle build -x test
+deploy:
+  provider: heroku
+  api_key: ...
+  app: ChooseLang
+  run:
+    - gradle build -x test
