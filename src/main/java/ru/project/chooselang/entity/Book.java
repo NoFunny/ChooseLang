@@ -39,7 +39,7 @@ public class Book {
      * @param name book
      */
 
-    Book(String name) {
+    public Book(String name) {
         this.name = name;
     }
 
