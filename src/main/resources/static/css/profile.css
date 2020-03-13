@@ -1,3 +1,22 @@
 .fullName {
     display: contents;
 }
+
+.myLibrary {
+    background-color: rgb(25, 45, 172);
+    color: white;
+}
+
+.icon {
+    background: url("https://img1.freepng.ru/20180630/uqs/kisspng-computer-icons-user-customer-service-avatar-usuario-5b3711e972de86.2426989915303357214705.jpg") no-repeat center;
+    height: fit-content;
+    width: auto;
+    border-radius: 50%;
+}
+
+.card_profile {
+    background-color: rgb(25, 45, 172);
+    color: white;
+    text-align: center;
+
+}

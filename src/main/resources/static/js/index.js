@@ -60,23 +60,27 @@ $(function () {
 
 $(function () {
     $(".checked").click(function() {
-        let book = $(this).parent().text();
-        let username = $("#userLogin").text();
-        console.log(book);
-        $.ajax({
-            type: "POST",
-            url: "/add_book",
-            dataType: "text",
-            data: {
-                book: book,
-                username: username
-            }
-        }).done((msg) => {
-            if(msg) {
-                console.log("OK!");
-            }else
-                console.log("Error!");
-        });
+        if(this.checked === true) {
+            let book = $(this).parent().text();
+            let username = $("#userLogin").text();
+            console.log(book);
+            $.ajax({
+                type: "POST",
+                url: "/add_book",
+                dataType: "text",
+                data: {
+                    book: book,
+                    username: username
+                }
+            }).done((msg) => {
+                if (msg) {
+                    console.log("OK!");
+                } else
+                    console.log("Error!");
+            });
+        }else {
+            console.log("Отмена");
+        }
     });
 });
 

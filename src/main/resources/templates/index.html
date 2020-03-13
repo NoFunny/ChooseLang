@@ -35,16 +35,16 @@
         <div class="collapse navbar-collapse navbar_list justify-content-center" id="navbarToggler">
             <ul class="navbar-nav ml-auto mr-2 navigation">
                 <li class="nav-item active">
-                    <a href="#"  class="nav-link text-light nav-item_word">Home</a>
+                    <a href="#"  class="nav-link text-light nav-item_word">Главная</a>
                 </li>
                 <li class="nav-item active">
-                    <a type="button" th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger; align-self:  center "  data-toggle="modal" data-target=".bd-signUp-modal-sm">Sign up</a>
+                    <a type="button" th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger; align-self:  center "  data-toggle="modal" data-target=".bd-signUp-modal-sm">Регистрация</a>
                 </li>
                 <li class="nav-item active">
-                    <a type="button"  th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger "  data-toggle="modal" data-target=".bd-signIn-modal-sm">Sign in</a>
+                    <a type="button"  th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger "  data-toggle="modal" data-target=".bd-signIn-modal-sm">Вход</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light nav-item_word" th:inline="text" href="/profile" id = "userLogin">[[${#httpServletRequest.remoteUser}]]</a>
+                    <a class="nav-link text-light nav-item_word" th:if="${#httpServletRequest.remoteUser}" th:inline="text" href="/profile" id = "userLogin">[[${#httpServletRequest.remoteUser}]]</a>
                 </li>
                 <li class="nav-item active" >
                     <a th:if="${#httpServletRequest.remoteUser}" href="/logout" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger ">Exit</a>
@@ -64,16 +64,16 @@
                         <option value="BSK">BSK</option>
                         <option value="SPB">SPB</option>
                         <option value="BRN">BRN</option>
-                        <option value="NSK">NSK</option>
-                        <option value="MSK">MSK</option>
-                        <option value="BSK">BSK</option>
-                        <option value="SPB">SPB</option>
-                        <option value="BRN">BRN</option>
-                        <option value="NSK">NSK</option>
-                        <option value="MSK">MSK</option>
-                        <option value="BSK">BSK</option>
-                        <option value="SPB">SPB</option>
-                        <option value="BRN">BRN</option>
+                        <option value="NSK">EKB</option>
+                        <option value="MSK">TMSK</option>
+                        <option value="BSK">KRS</option>
+                        <option value="SPB">OMSK</option>
+                        <option value="BRN">KZN</option>
+                        <option value="NSK">NZHNOVG</option>
+                        <option value="MSK">GROZNY</option>
+                        <option value="BSK">PERM</option>
+                        <option value="SPB">CHEL</option>
+                        <option value="BRN">SAMARA</option>
                     </select>
                 </li>
             </ul>
@@ -89,47 +89,47 @@
     <div class="row justify-content-around a">
         <div class="col-xl-4 col-md-6 col-sm-8 col-12 tables_logo" id="python">
             <div class="row tables justify-content-center">
-                <div class="col-xl-9 tables_item">123123123sfsdfsdfsdfsdf213</div>
+                <div class="col-xl-9 tables_item"></div>
             </div>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-8 col-12 tables_logo" id="java">
             <div class="row tables justify-content-center">
-                <div class="col-xl-9 tables_item">123123123sfsdfsdfsdfsdf213</div>
+                <div class="col-xl-9 tables_item"></div>
             </div>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-8 col-12 tables_logo" id="ci">
             <div class="row tables justify-content-center">
-                <div class="col-xl-9 tables_item">123123123sfsdfsdfsdfsdf213</div>
+                <div class="col-xl-9 tables_item"></div>
             </div>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-8 col-12 tables_logo" id="php">
             <div class="row tables justify-content-center">
-                <div class="col-xl-9 tables_item">123123123sfsdfsdfsdfsdf213</div>
+                <div class="col-xl-9 tables_item"></div>
             </div>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-8 col-12 tables_logo" id="cpp">
             <div class="row tables justify-content-center">
-                <div class="col-xl-9 tables_item">123123123sfsdfsdfsdfsdf213</div>
+                <div class="col-xl-9 tables_item"></div>
             </div>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-8 col-12 tables_logo" id="js">
             <div class="row tables justify-content-center">
-                <div class="col-xl-9 tables_item">123123123sfsdfsdfsdfsdf213</div>
+                <div class="col-xl-9 tables_item"></div>
             </div>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-8 col-12 tables_logo" id="csh">
             <div class="row tables justify-content-center">
-                <div class="col-xl-9 tables_item">123123123sfsdfsdfsdfsdf213</div>
+                <div class="col-xl-9 tables_item"></div>
             </div>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-8 col-12 tables_logo" id="ruby">
             <div class="row tables justify-content-center">
-                <div class="col-xl-9 tables_item">123123123sfsdfsdfsdfsdf213</div>
+                <div class="col-xl-9 tables_item"></div>
             </div>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-8 col-12 tables_logo" id="obci">
             <div class="row tables justify-content-center">
-                <div class="col-xl-9 tables_item">123123123sfsdfsdfsdfsdf213</div>
+                <div class="col-xl-9 tables_item"></div>
             </div>
         </div>
     </div>
@@ -170,7 +170,7 @@
             <div class="tab-pane fade active show" id="python_tab" role="tabpanel" aria-labelledby="python_tab">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
                                 <li><input type="checkbox" class="checked">Python Crash Course, Eric Matthes</li>
                                 <li><input type="checkbox" class="checked">Head-First Python, Paul Barry</li>
@@ -187,15 +187,15 @@
             <div class="tab-pane fade" id="java_tab" role="tabpanel" aria-labelledby="java_tab" th:if="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
-                                <li><input type="checkbox" class="checked">Эффективная Java – Джошуа Блох</li>
+                                <li><input type="checkbox" class="checked">Effective Java - Joshua Bloch</li>
                                 <li><input type="checkbox" class="checked">Clean Code: A Handbook of Agile Software Craftsmanship – Robert C. Martin</li>
-                                <li><input type="checkbox" class="checked">Java. Библиотека профессионала – Кей С. Хорстманн</li>
-                                <li><input type="checkbox" class="checked">Head First. Паттерны проектирования – Эрик Фримен, Элизабет Робсон</li>
-                                <li><input type="checkbox" class="checked">Spring в действии – Крейг Уоллс</li>
+                                <li><input type="checkbox" class="checked">Java Professional Library - Kay S. Horstmann</li>
+                                <li><input type="checkbox" class="checked">Head First. Design Patterns - Eric Freeman, Elizabeth Robson</li>
+                                <li><input type="checkbox" class="checked">Spring in Action - Craig Walls</li>
                                 <li><input type="checkbox" class="checked">Test Driven: TDD and Acceptance TDD for Java Developers – Lasse Koskela</li>
-                                <li><input type="checkbox" class="checked">Изучаем Java – Кэти Сиерра, Берт Бейтс</li>
+                                <li><input type="checkbox" class="checked">Learning Java - Katie Sierra, Burt Bates</li>
                             </ul>
                         </div>
                     </div>
@@ -204,7 +204,7 @@
             <div class="tab-pane fade" id="c_tab" role="tabpanel" aria-labelledby="c-tab" th:if="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
                                 <li><input type="checkbox" class="checked">The C Book</li>
                                 <li><input type="checkbox" class="checked">C Elements of Style</li>
@@ -221,15 +221,15 @@
             <div class="tab-pane fade" id="php_tab" role="tabpanel" aria-labelledby="php-tab" th:if="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
-                                <li><input type="checkbox" class="checked">Самоучитель PHP 7 – Игорь Симдянов</li>
-                                <li><input type="checkbox" class="checked">PHP 7 в подлиннике – Дмитрий Котеров</li>
-                                <li><input type="checkbox" class="checked">Изучаем PHP 7 – Дэвид Скляр</li>
-                                <li><input type="checkbox" class="checked">PHP. Правильный путь</li>
+                                <li><input type="checkbox" class="checked">PHP 7 tutorial - Igor Simdyanov</li>
+                                <li><input type="checkbox" class="checked">PHP 7 in the original - Dmitry Koterov</li>
+                                <li><input type="checkbox" class="checked">Learning PHP 7 - David Sklyar</li>
+                                <li><input type="checkbox" class="checked">PHP The right way</li>
                                 <li><input type="checkbox" class="checked">PHP 7 Zend Certification Study Guide</li>
                                 <li><input type="checkbox" class="checked">Learning PHP Design Patterns</li>
-                                <li><input type="checkbox" class="checked">PHP7 для начинающих с пошаговыми инструкциями Майк МакГрат</li>
+                                <li><input type="checkbox" class="checked">PHP7 for beginners with step-by-step instructions Mike (McGrath)</li>
                             </ul>
                         </div>
                     </div>
@@ -238,15 +238,15 @@
             <div class="tab-pane fade" id="cpp_tab" role="tabpanel" aria-labelledby="cpp-tab" th:if="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
-                                <li><input type="checkbox" class="checked">«Программирование: принципы и практика использования C++» (Бьёрн Страуструп) </li>
-                                <li><input type="checkbox" class="checked">«C++ Primer»* (Стэнли Липпман, Жозе Лажуа и Барбара Э. Му)</li>
-                                <li><input type="checkbox" class="checked">«Обзор С++» (Бьёрн Страуструп)</li>
-                                <li><input type="checkbox" class="checked">«Accelerated C++» («Ускоренный С++») (Эндрю Кёниг и Барбара Му)</li>
-                                <li><input type="checkbox" class="checked">«Thinking in C++» («Мышление на С++») (Брюс Эккель)</li>
-                                <li><input type="checkbox" class="checked">«Effective C++» («Эффективное использование C++») (Скотт Майерс).</li>
-                                <li><input type="checkbox" class="checked">«Effective Modern C++» («Эффективный и современный С++») (Скотт Майерс).</li>
+                                <li><input type="checkbox" class="checked">«Programming: principles and practice of using C ++ ”(Björn Straustrup)»</li>
+                                <li><input type="checkbox" class="checked">«C++ Primer»* (Stanley Lippman, Jose Lazhua and Barbara E. Mu)</li>
+                                <li><input type="checkbox" class="checked">Overview С++» (Björn Straustrup)</li>
+                                <li><input type="checkbox" class="checked">«Accelerated C++» (Andrew Koenig and Barbara Mu)</li>
+                                <li><input type="checkbox" class="checked">«Thinking in C++» (Bruce eckel)</li>
+                                <li><input type="checkbox" class="checked">«Effective C++» (Scott Myers)</li>
+                                <li><input type="checkbox" class="checked">«Effective Modern C++» (Scott Myers)</li>
                             </ul>
                         </div>
                     </div>
@@ -255,15 +255,15 @@
             <div class="tab-pane fade" id="js_tab" role="tabpanel" aria-labelledby="js-tab" th:if="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
-                                <li><input type="checkbox" class="checked">«JavaScript. Сильные стороны»</li>
-                                <li><input type="checkbox" class="checked">«Вы не знаете JS»</li>
-                                <li><input type="checkbox" class="checked">«Выразительный Javascript»</li>
-                                <li><input type="checkbox" class="checked">«Сила JavaScript. 68 способов эффективного использования JS»</li>
-                                <li><input type="checkbox" class="checked">«JavaScript. Подробное руководство»</li>
-                                <li><input type="checkbox" class="checked">«Секреты JavaScript ниндзя»</li>
-                                <li><input type="checkbox" class="checked">«JavaScript. Основы»</li>
+                                <li><input type="checkbox" class="checked">«JavaScript. Strengths»</li>
+                                <li><input type="checkbox" class="checked">«You do not know JS»</li>
+                                <li><input type="checkbox" class="checked">«Expressive Javascript»</li>
+                                <li><input type="checkbox" class="checked">«The power of JavaScript. 68 Ways to Use JS Effectively»</li>
+                                <li><input type="checkbox" class="checked">«JavaScript. Detailed Guide»</li>
+                                <li><input type="checkbox" class="checked">«Ninja JavaScript Secrets»</li>
+                                <li><input type="checkbox" class="checked">«JavaScript. The Basics»</li>
                             </ul>
                         </div>
                     </div>
@@ -272,14 +272,14 @@
             <div class="tab-pane fade" id="csh_tab" role="tabpanel" aria-labelledby="csh-tab" th:if="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
                                 <li><input type="checkbox" class="checked">C# Programming Yellow Book</li>
                                 <li><input type="checkbox" class="checked">Fundamentals of Computer Programming with C#</li>
                                 <li><input type="checkbox" class="checked">C# Programming</li>
                                 <li><input type="checkbox" class="checked">.NET Book Zero</li>
-                                <li><input type="checkbox" class="checked">C# 7.0. Карманный справочник</li>
-                                <li><input type="checkbox" class="checked">Microsoft Visual C#. Подробное руководство</li>
+                                <li><input type="checkbox" class="checked">C # 7.0 Pocket guide</li>
+                                <li><input type="checkbox" class="checked">Microsoft Visual C #. Detailed guide</li>
                                 <li><input type="checkbox" class="checked">Introduction to programming and the C# language</li>
                             </ul>
                         </div>
@@ -289,37 +289,31 @@
             <div class="tab-pane fade" id="ruby_tab" role="tabpanel" aria-labelledby="ruby-tab" th:if="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
                                 <li><input type="checkbox" class="checked">Ruby Best Practices</li>
-                                <li><input type="checkbox" class="checked">Путь Ruby</li>
+                                <li><input type="checkbox" class="checked">Ruby path</li>
                                 <li><input type="checkbox" class="checked">Learn Ruby the Hard Way</li>
-                                <li><input type="checkbox" class="checked">Head First. Изучаем Ruby</li>
+                                <li><input type="checkbox" class="checked">Head First. Learn Ruby</li>
                                 <li><input type="checkbox" class="checked">Ruby Essentials</li>
                                 <li><input type="checkbox" class="checked">Ruby Programming</li>
-                                <li><input type="checkbox" class="checked">Ruby on Rails для начинающих. Изучаем разработку веб-приложений на основе Rails</li>
+                                <li><input type="checkbox" class="checked">Ruby on Rails for beginners. Learning Rails Web Application Development</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
             <div class="tab-pane fade" id="objc_tab" role="tabpanel" aria-labelledby="objc-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
-                                <li>Програмирование на Objective-C Cтивен Кочан</li>
-                                <li>Iphone SDK Разработка приложений Джонатан Здиарски</li>
-                                <li>Objective-C 2.0 и программирование для Mac Марк Далримпл</li>
-                                <li>Разработка приложений под iPhone. Полное руководство</li>
+                                <li>Programming on Objective-C Steven Kochan</li>
+                                <li>Iphone SDK Application Development Jonathan Zdiarski</li>
+                                <li>Objective-C 2.0 and Mac Programming Mark Dalrymple</li>
+                                <li>Application development for iPhone. Complete guide</li>
                                 <li>Head First iPhone Development</li>
-                                <li>Objective-C Programming For Dummies
-                                </li>
+                                <li>Objective-C Programming For Dummies</li>
                                 <li>Learn Objective-C on the Mac (Learn Series)</li>
                             </ul>
                         </div>
@@ -327,11 +321,13 @@
                 </div>
             </div>
         </div>
+
+
         <div class="tab-content" id="myTabContent" th:unless="${#httpServletRequest.remoteUser}">
             <div class="tab-pane fade active show" id="python_tab" role="tabpanel" aria-labelledby="python_tab">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
                                 <li>Python Crash Course, Eric Matthes</li>
                                 <li>Head-First Python, Paul Barry</li>
@@ -348,15 +344,15 @@
             <div class="tab-pane fade" id="java_tab" role="tabpanel" aria-labelledby="java_tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
-                                <li>Эффективная Java – Джошуа Блох</li>
+                                <li>Effective Java - Joshua Bloch</li>
                                 <li>Clean Code: A Handbook of Agile Software Craftsmanship – Robert C. Martin</li>
-                                <li>Java. Библиотека профессионала – Кей С. Хорстманн</li>
-                                <li>Head First. Паттерны проектирования – Эрик Фримен, Элизабет Робсон</li>
-                                <li>Spring в действии – Крейг Уоллс</li>
+                                <li>Java Professional Library - Kay S. Horstmann</li>
+                                <li>Head First. Design Patterns - Eric Freeman, Elizabeth Robson</li>
+                                <li>Spring in Action - Craig Walls</li>
                                 <li>Test Driven: TDD and Acceptance TDD for Java Developers – Lasse Koskela</li>
-                                <li>Изучаем Java – Кэти Сиерра, Берт Бейтс</li>
+                                <li>Learning Java - Katie Sierra, Burt Bates</li>
                             </ul>
                         </div>
                     </div>
@@ -365,7 +361,7 @@
             <div class="tab-pane fade" id="c_tab" role="tabpanel" aria-labelledby="c-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
                                 <li>The C Book</li>
                                 <li>C Elements of Style</li>
@@ -382,15 +378,15 @@
             <div class="tab-pane fade" id="php_tab" role="tabpanel" aria-labelledby="php-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
-                                <li>Самоучитель PHP 7 – Игорь Симдянов</li>
-                                <li>PHP 7 в подлиннике – Дмитрий Котеров</li>
-                                <li>Изучаем PHP 7 – Дэвид Скляр</li>
-                                <li>PHP. Правильный путь</li>
+                                <li>PHP 7 tutorial - Igor Simdyanov</li>
+                                <li>PHP 7 in the original - Dmitry Koterov</li>
+                                <li>Learning PHP 7 - David Sklyar</li>
+                                <li>PHP The right way</li>
                                 <li>PHP 7 Zend Certification Study Guide</li>
                                 <li>Learning PHP Design Patterns</li>
-                                <li>PHP7 для начинающих с пошаговыми инструкциями Майк МакГрат</li>
+                                <li>PHP7 for beginners with step-by-step instructions Mike (McGrath)</li>
                             </ul>
                         </div>
                     </div>
@@ -399,15 +395,15 @@
             <div class="tab-pane fade" id="cpp_tab" role="tabpanel" aria-labelledby="cpp-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
-                                <li>«Программирование: принципы и практика использования C++» (Бьёрн Страуструп) </li>
-                                <li>«C++ Primer»* (Стэнли Липпман, Жозе Лажуа и Барбара Э. Му)</li>
-                                <li>«Обзор С++» (Бьёрн Страуструп)</li>
-                                <li>«Accelerated C++» («Ускоренный С++») (Эндрю Кёниг и Барбара Му)</li>
-                                <li>«Thinking in C++» («Мышление на С++») (Брюс Эккель)</li>
-                                <li>«Effective C++» («Эффективное использование C++») (Скотт Майерс).</li>
-                                <li>«Effective Modern C++» («Эффективный и современный С++») (Скотт Майерс).</li>
+                                <li>«Programming: principles and practice of using C ++» (Björn Straustrup)</li>
+                                <li>«C++ Primer»* (Stanley Lippman, Jose Lazhua and Barbara E. Mu)</li>
+                                <li>«Overview С++» (Björn Straustrup)</li>
+                                <li>«Accelerated C++» (Andrew Koenig and Barbara Mu)</li>
+                                <li>«Thinking in C++» (Bruce eckel)</li>
+                                <li>«Effective C++» (Scott Myers)</li>
+                                <li>«Effective Modern C++» (Scott Myers)</li>
                             </ul>
                         </div>
                     </div>
@@ -416,15 +412,15 @@
             <div class="tab-pane fade" id="js_tab" role="tabpanel" aria-labelledby="js-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
-                                <li> «JavaScript. Сильные стороны»</li>
-                                <li> «Вы не знаете JS»</li>
-                                <li> «Выразительный Javascript»</li>
-                                <li> «Сила JavaScript. 68 способов эффективного использования JS»</li>
-                                <li>«JavaScript. Подробное руководство»</li>
-                                <li>«Секреты JavaScript ниндзя»</li>
-                                <li>«JavaScript. Основы»</li>
+                                <li>«JavaScript. Strengths»</li>
+                                <li>«You do not know JS»</li>
+                                <li>«Expressive Javascript»</li>
+                                <li>«The power of JavaScript. 68 Ways to Use JS Effectively»</li>
+                                <li>«JavaScript. Detailed Guide»</li>
+                                <li>«Ninja JavaScript Secrets»</li>
+                                <li>«JavaScript. The Basics»</li>
                             </ul>
                         </div>
                     </div>
@@ -433,14 +429,14 @@
             <div class="tab-pane fade" id="csh_tab" role="tabpanel" aria-labelledby="csh-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
                                 <li>C# Programming Yellow Book</li>
                                 <li>Fundamentals of Computer Programming with C#</li>
                                 <li>C# Programming</li>
                                 <li>.NET Book Zero</li>
-                                <li>C# 7.0. Карманный справочник</li>
-                                <li>Microsoft Visual C#. Подробное руководство</li>
+                                <li>C # 7.0 Pocket guide</li>
+                                <li>Microsoft Visual C #. Detailed guide</li>
                                 <li>Introduction to programming and the C# language</li>
                             </ul>
                         </div>
@@ -450,15 +446,15 @@
             <div class="tab-pane fade" id="ruby_tab" role="tabpanel" aria-labelledby="ruby-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
                                 <li>Ruby Best Practices</li>
-                                <li>Путь Ruby</li>
+                                <li>Ruby path</li>
                                 <li>Learn Ruby the Hard Way</li>
-                                <li>Head First. Изучаем Ruby</li>
+                                <li>Head First. Learn Ruby</li>
                                 <li>Ruby Essentials</li>
                                 <li>Ruby Programming</li>
-                                <li>Ruby on Rails для начинающих. Изучаем разработку веб-приложений на основе Rails</li>
+                                <li>Ruby on Rails for beginners. Learning Rails Web Application Development</li>
                             </ul>
                         </div>
                     </div>
@@ -467,15 +463,14 @@
             <div class="tab-pane fade" id="objc_tab" role="tabpanel" aria-labelledby="objc-tab" th:unless="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
-                        <div class="col">Books
+                        <div class="col">Книги
                             <ul class="lib_list">
-                                <li>Програмирование на Objective-C Cтивен Кочан</li>
-                                <li>Iphone SDK Разработка приложений Джонатан Здиарски</li>
-                                <li>Objective-C 2.0 и программирование для Mac Марк Далримпл</li>
-                                <li>Разработка приложений под iPhone. Полное руководство</li>
+                                <li>Programming on Objective-C Steven Kochan</li>
+                                <li>Iphone SDK Application Development Jonathan Zdiarski</li>
+                                <li>Objective-C 2.0 and Mac Programming Mark Dalrymple</li>
+                                <li>Application development for iPhone. Complete guide</li>
                                 <li>Head First iPhone Development</li>
-                                <li>Objective-C Programming For Dummies
-                                </li>
+                                <li>Objective-C Programming For Dummies</li>
                                 <li>Learn Objective-C on the Mac (Learn Series)</li>
                             </ul>
                         </div>
@@ -509,34 +504,38 @@
             <div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="firstName">First name</label>
+                        <label for="firstName">Имя</label>
                         <input type="text" class="form-control" id="firstName" required="required" placeholder="First name" pattern="[A-Z][a-z]{1,15}">
+                        <small id="" class="form-text text-muted">С большой буквы латинского алфавита от 4 до 15 символов</small>
                     </div>
                     <div class="form-group">
-                        <label for="lastName">Last name</label>
-                        <input type="text" class="form-control" id="lastName" required="required" placeholder="Last name" pattern="[A-Z][a-z]{1,15}">
+                        <label for="lastName">Фамилия</label>
+                        <input type="text" class="form-control" id="lastName" required="required" placeholder="Last name" pattern="[A-Z][a-z]{4,15}">
+                        <small id="" class="form-text text-muted">С большой буквы латинского алфавита от 4 до 15 символов</small>
                     </div>
                     <div class="form-group">
-                        <label for="upUsername">Username</label>
+                        <label for="upUsername">Логин</label>
                         <input type="text" class="form-control" id="upUsername" required="required" placeholder="Name" pattern="[0-9a-zA-Z]{6,12}">
+                        <small id="" class="form-text text-muted">Большие и маленькие буквы латинского алфавита и цифры от 6 до 12 символов</small>
                     </div>
                     <div class="form-group">
-                       <label for="upPassword">Password</label>
+                       <label for="upPassword">Пароль</label>
                        <input type="password" class="form-control" id="upPassword" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
+                        <small id="" class="form-text text-muted">Большие и маленькие буквы латинского алфавита и цифры от 6 до 20 символов</small>
                     </div>
                     <div class="form-group">
-                       <label for="repeat_pass">Repeat password</label>
+                       <label for="repeat_pass">Повторите пароль</label>
                        <input type="password" class="form-control" id="repeat_pass" required="required" placeholder="Repeat password" pattern="[A-Za-z0-9]{6,20}">
                     </div>
                     <div class="form-group">
-                       <label for="mail">Email</label>
+                       <label for="mail">Почта</label>
                        <input type="email" class="form-control" aria-describedby="emailHelp" id="mail" required="required" placeholder="Email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
                     </div>
                 </div>
             </div>
                 <div>
                     <div class="modal-footer">
-                        <button type="button" id="sign_up" class="btn btn-primary">Submit</button>
+                        <button type="button" id="sign_up" class="btn btn-primary">Зарегистрироваться</button>
                         <button type="button"  class="close bd-dark" data-dismiss="modal" aria-label="Close" style="color:white">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -560,18 +559,18 @@
                 <div>
                     <div class="modal-body">
                       <div class="form-group">
-                          <label for="username">Username</label>
-                          <input type="text" id="username" name="username" required="required" placeholder="Name" >
+                          <label for="username">Логин</label>
+                          <input type="text" id="username" class="form-control" name="username" required="required" pattern="[0-9a-zA-Z]{4,15}" placeholder="Name">
                       </div>
                       <div class="form-group">
-                          <label for="password">First name</label>
-                          <input type="password" id="password" name="password" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
+                          <label for="password">Пароль</label>
+                          <input type="password" id="password" class="form-control" name="password" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
                       </div>
                     </div>
                 </div>
                 <div>
                     <div class="modal-footer">
-                        <button type="submit"  class="btn btn-primary btn-lg login-button btn-sm">Sign in</button>
+                        <button type="submit"  class="btn btn-primary btn-lg login-button btn-sm">Вход</button>
                         <button type="button" class="close bd-dark" data-dismiss="modal" aria-label="Close" style="color:white">
                             <span aria-hidden="true">×</span>
                         </button>

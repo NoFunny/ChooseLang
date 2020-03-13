@@ -61,16 +61,16 @@ public class UserService implements UserDetailsService {
     public byte addBook(String book, String username) {
         if(userRepository.existsByUsername(username)) {
             User user = userRepository.findByUsername(username);
-            Set<Book> nehachu= user.getBooks();
-            nehachu.add(new Book(book));
-            user.setBooks(nehachu);
+            Set<Book> newBook= user.getBooks();
+            newBook.add(new Book(book));
+            user.setBooks(newBook);
             return 0;
         }
         return 1;
     }
 
     @Transactional
-    public Collection<Book> getBook(String username) {
+    public Set<Book> getBook(String username) {
         if(userRepository.existsByUsername(username)) {
             User user = userRepository.findByUsername(username);
             return user.getBooks();
