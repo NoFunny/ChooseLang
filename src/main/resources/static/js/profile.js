@@ -1,6 +1,5 @@
 $(document).ready (() => {
    let username = $("#userLogin").text();
-   console.log(username);
    $.ajax({
        type: "POST",
        url: "/getFullName",
@@ -24,9 +23,7 @@ $(document).ready (() => {
             username : username
        }
    }).done((msg) => {
-       console.log(msg);
        let message = JSON.parse(msg);
-       console.log(message);
        let uniqueMsg = message.filter((item) => itemCheck(item));
        console.log(uniqueMsg);
        $(".myLibrary")
@@ -53,9 +50,40 @@ function itemCheck(item) {
 }
 
 function render(item) {
-    console.log(item.name);
     return  $(".myLibrary>div>div>div>ul")
         .append(
-            "<li>" + item.name + "</li>"
+            "<li class='shelf'>" + item.name + "<button id='deleteBook' type='button' class='close bd-dark' data-dismiss='modal' aria-label='Close' style='color:white'>\n" +
+            "                            <span aria-hidden='true'>×</span></li>"
         )
 }
+
+$(function () {
+    $('body').on('click', '#deleteBook', function () {
+        console.log("123123");
+        let nameBook = $(this).closest('li.shelf').text();
+        console.log(Array.from(nameBook));
+        let string = [];
+        for(let i = 0; i < nameBook.length; i++) {
+            if(nameBook[i] === '\n') {
+               string = nameBook.slice(0,i);
+            }
+        }
+        string.toString();
+        console.log(string);
+        let user = $("#userLogin").text();
+        console.log(user);
+        $(this).parent().remove();
+        $.ajax({
+            type: "POST",
+            url: "/deleteBook",
+            dataType: "text",
+            data: {
+                user: user,
+                nameBook: string
+            }
+        }).done((msg) => {
+            msg = JSON.parse(msg);
+            console.log(msg);
+        })
+    })
+});

@@ -103,7 +103,19 @@ public class UserService implements UserDetailsService {
         }
         return null;
     }
-    
+
+    @Transactional
+    public Byte deleteBook(String username, String nameBook) {
+        if(userRepository.existsByUsername(username)) {
+            User user = userRepository.findByUsername(username);
+            log.error("LOG NAMEBOOOOOK ===== " + nameBook);
+            Set<Book> newListBook = getBook(username);
+            newListBook.removeIf(prop -> prop.getName().equals(nameBook));
+            return 0;
+        }
+        return 1;
+    }
+
     /**
      * load user by username automatically generated method
      * @param username username by object user

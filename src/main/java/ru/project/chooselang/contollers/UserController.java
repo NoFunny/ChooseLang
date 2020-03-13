@@ -118,4 +118,10 @@ public class UserController {
         ArrayList<String> req = SplitURL.split(object);
         return userService.getBook(req.get(0));
     }
+
+    @RequestMapping(value = "/deleteBook", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Byte deleteBook(@RequestBody String object) throws UnsupportedEncodingException {
+        ArrayList<String> req = SplitURL.split(object);
+        return userService.deleteBook(req.get(0), req.get(1));
+    }
 }
