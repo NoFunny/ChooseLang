@@ -10,7 +10,10 @@ import ru.project.chooselang.dao.UserRepository;
 import ru.project.chooselang.entity.*;
 
 import javax.transaction.Transactional;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Set;
+
 
 /**
  * Salary service class
@@ -18,6 +21,7 @@ import java.util.Collections;
  * @version 1.0
  * @see UserDetailsService
  */
+
 
 @Slf4j
 @Service
@@ -78,12 +82,35 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
+
+    @Transactional
+    public byte addBook(String book, String username) {
+        if(userRepository.existsByUsername(username)) {
+            User user = userRepository.findByUsername(username);
+            Set<Book> newBook= user.getBooks();
+            newBook.add(new Book(book));
+            user.setBooks(newBook);
+            return 0;
+        }
+        return 1;
+    }
+
+    @Transactional
+    public Set<Book> getBook(String username) {
+        if(userRepository.existsByUsername(username)) {
+            User user = userRepository.findByUsername(username);
+            return user.getBooks();
+        }
+        return null;
+    }
+    
     /**
      * load user by username automatically generated method
      * @param username username by object user
      * @return user object
      * @throws UsernameNotFoundException
      */
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

@@ -58,5 +58,4 @@ public interface UserRepository extends CrudRepository<User, Long> {
 
     @Transactional
     void deleteByUsername(String username);
-
 }
