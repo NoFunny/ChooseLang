@@ -1,12 +1,16 @@
 language: java
-jdk:
-  - openjdk11
+install: true
+
+os: linux
+dist: trusty
+jdk: oraclejdk8
+
 script:
-  - gradle build -x test
+  - gradlew build --scan -s
 deploy:
   provider: heroku
-  api_key: ...
-  app: ChooseLang
-  on: dev
-  run:
-    - gradle build -x test
+  api_key:
+    secure:
+  app:
+    master: ChooseLang
+    dev: ChooseLang (v1.2)

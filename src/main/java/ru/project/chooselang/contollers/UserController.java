@@ -37,8 +37,9 @@ public class UserController {
 
     /**
      * Registration method for creating a new user
-     * @param object
-     * @return
+     * @param object contain username, firstname, lastname,
+     * email, password.
+     * @return result registration new user
      * @throws UnsupportedEncodingException
      */
 
@@ -69,8 +70,8 @@ public class UserController {
 
     /**
      * Get Salary from DB method
-     * @param object
-     * @return
+     * @param object contain city
+     * @return JSON object whit all salaries by city
      * @throws IOException
      */
 
@@ -86,7 +87,7 @@ public class UserController {
     /**
      * Get fullname user from DB method
      * @param object
-     * @return
+     * @return Object user
      * @throws UnsupportedEncodingException
      */
 

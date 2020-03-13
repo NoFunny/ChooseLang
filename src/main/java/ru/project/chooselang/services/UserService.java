@@ -14,7 +14,7 @@ import java.util.Collections;
 
 /**
  * Salary service class
- * @author skwardlow
+ * @author skwardlow, NoFunny
  * @version 1.0
  * @see UserDetailsService
  */
@@ -33,7 +33,7 @@ public class UserService implements UserDetailsService {
     /**
      * Registration user method
      * @param user
-     * @return
+     * @return result registration new User to DB
      */
 
     @Transactional
@@ -62,8 +62,8 @@ public class UserService implements UserDetailsService {
 
     /**
      * Get fullname user method
-     * @param username
-     * @return
+     * @param username username by object user
+     * @return User object
      */
 
     @Transactional
@@ -80,8 +80,8 @@ public class UserService implements UserDetailsService {
 
     /**
      * load user by username automatically generated method
-     * @param username
-     * @return
+     * @param username username by object user
+     * @return user object
      * @throws UsernameNotFoundException
      */
 

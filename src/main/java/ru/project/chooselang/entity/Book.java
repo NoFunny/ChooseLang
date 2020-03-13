@@ -30,7 +30,7 @@ public class Book {
 
     /**
      * Constructor for Book object
-     * @param name
+     * @param name book
      */
 
     Book(String name) {
