@@ -8,6 +8,15 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * Book representation class
+ * @author NoFunny
+ * @version 1.0
+ * @see Table
+ * @see NoArgsConstructor
+ * @see Entity
+ */
+
 @Getter
 @Setter
 @Entity
@@ -25,7 +34,12 @@ public class Book {
     @JoinTable(name = "u_books")
     Set<User> user;
 
-    public Book(String name) {
+    /**
+     * Constructor for Book object
+     * @param name book
+     */
+
+    Book(String name) {
         this.name = name;
     }
 

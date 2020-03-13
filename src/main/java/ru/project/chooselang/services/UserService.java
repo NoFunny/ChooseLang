@@ -14,12 +14,31 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 
+
+/**
+ * Salary service class
+ * @author skwardlow, NoFunny
+ * @version 1.0
+ * @see UserDetailsService
+ */
+
+
 @Slf4j
 @Service
 public class UserService implements UserDetailsService {
+
+    /**
+     * Dao user repository
+     */
+
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     * Registration user method
+     * @param user
+     * @return result registration new User to DB
+     */
 
     @Transactional
     public byte addUser(User user) {
@@ -45,6 +64,12 @@ public class UserService implements UserDetailsService {
         return 0;
     }
 
+    /**
+     * Get fullname user method
+     * @param username username by object user
+     * @return User object
+     */
+
     @Transactional
     public User getFullName(String username) {
         User user = new User();
@@ -56,6 +81,7 @@ public class UserService implements UserDetailsService {
         }
         return user;
     }
+
 
     @Transactional
     public byte addBook(String book, String username) {
@@ -77,6 +103,14 @@ public class UserService implements UserDetailsService {
         }
         return null;
     }
+    
+    /**
+     * load user by username automatically generated method
+     * @param username username by object user
+     * @return user object
+     * @throws UsernameNotFoundException
+     */
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
