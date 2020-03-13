@@ -6,7 +6,7 @@ dist: trusty
 jdk: oraclejdk8
 
 script:
-  - gradlew build --scan -s
+  - ./gradlew build -x test
 deploy:
   provider: heroku
   api_key:
