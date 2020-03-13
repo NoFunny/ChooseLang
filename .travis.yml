@@ -1,5 +1,16 @@
 language: java
 jdk:
 - openjdk11
-script:
-- gradle build -x test
+deploy:
+  provider: heroku
+  api_key:
+    secure: iAs7UMKBBXwPWD3X6azZIYUOPQy5QafcEgxB4oPKXhT2/cf2IRD+eexc7I9yNptsMvPrIG3MmCWkieQj4ITQg+Cu1aYNoJTaKrVREsfSI4cUN4kS9FauCvvxGCEfv2Z5h8f33LZDGzkWw4B3qQN+47F9K1KAUbvYdiTOtGRkr1Lg/Wa97K9s0eYcPP3mK5A3ik5k68ytWP73Zy6ahUBVorWqLE9pFZNRhMWwK+9NmJem39eDgEgoCepZ1xGZ5Cpq//oLcD/GkCVb8W94NBlJs+Gi9Rh2sqDd4/zRh1RUoZqd9YZuOIsPAPhMNPD/K+W8y2J4Pe2aX17qid+9XT7huHvxeggWzQOVeEWAjqrVJil2t6H+kVBhcflPhzxba6QN6DEobrubo9DLVr6lUMuDN1HnWp0v1vk1PqhhEUZWTUxpLuiu9NuNhw8pzRCSqnEe1rKBBDslMkxqIGAaZiyop9rqndFbuHD6VWRV6ECyi0i5iiEQS4ktDBSBz7fNzJa6huce9Lj3G/2iAH39MSK6Gw8Bb0NNkePzU9aZraILNBL1W7zVApXnfk3Vrzgqxd13+WY/a3gANjRoN2xZ7WhlKnX6i0h7PrHKpH+K78fdnzGLX804nD5E+97Plj2rhaHL7bNET6dc9pVoFyzYQT6flfF2U4r55eFMMufgTAMR7FU=
+  app: chooselang
+  
+before_cache:
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
