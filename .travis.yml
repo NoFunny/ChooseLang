@@ -7,5 +7,6 @@ deploy:
   provider: heroku
   api_key: ...
   app: ChooseLang
+  on: dev
   run:
     - gradle build -x test
