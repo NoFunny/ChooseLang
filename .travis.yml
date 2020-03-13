@@ -3,10 +3,3 @@ jdk:
 - openjdk11
 script:
 - gradle build -x test
-deploy:
-  provider: heroku
-  api_key:
-    secure: o19va8gvtobnI4SW8wPjFCbmOVqnOiaXH5pqOx9gyxS4UwpjUt8RP8KKwWTyEU9eJzsZADVkJuHefV2FX/gk1ZEx6ckEN5Xr6Wh2TqroSygGTIiUAWFOo0Nff2Hd0TRivdQ2UkBojOIYeOVpxJDGf6l1rfndliJsVyVXQptHyAzkp4jQ6vm7R8nF6xiXVebXJe+c9cb7jkVGae6SVD6jcuBzCrR9e+CYjhBX/lgZ5y90Dx1eR+aiSlCdBPyQq6SJYPCx77sdsTOwRncyqNEMRN/CQF7k/XgE9Q2IHgoQjUS2Nc3ZsYbjuafDk+MuMR3oBYwZqxKlNCk7IcQHn5Kn/kjaoQi39lwRiTbTkkleFKH9aQUMSSroOEOqPUo74QEgow8KUuSU50sg823BUNyoUdFSUQ8BIcEDfArCzQufKL0r5pZvMwkIepL9HvHHhslk0+j745z9heiTBkpM9mXfkq4I5QJ2Z/fCYDS4J++v7PTBjqHWVCLQD0fNuz3YMK3pXHhyKZvTTAli8p501E+MoJP/zjf3WtFzyXyJyrX6m4nB02ygGmwpjyJ0hpyub3LdXWggT/jy8s5/nzSan075HildzNrUPdpAJ1itHRbGrVzYr3GhNgs1MHZtwkhIIRTYr3yP4qH4L4p6aemirV0CkS47ioFctGDij2yUWdugIhE=
-  on:
-    all_branches: true
-  
