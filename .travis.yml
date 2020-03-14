@@ -6,6 +6,6 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: TkyKwrz+V0x3UJaRaBkgE+dj+1nL5HYKMm8ipfiPcQLd1ITYiBQadp0UYYyX4dzSSeZQTVq/6eUe3FIv/qO1poZjHlgbpmVKOBkG3R5Ar/8C42leCIrYxCngy8G8FvPSsci0OfRrI87xvktmyGtO4KJx/aTuKhHZTNWCh59mjXpEi+tb7dNhAB8yWGo4/kGH1ljH0NL+JliIrIm/6qBQVAJDlN07HGKv5s7o7K1arssNtkhh0//plFaGhklaSp1rCY1L//yxm2dBmAq9HVGL/eSSVcd+9raDJpAvZUyrViauBzrWRSYaJRcOrR3w3Xa2m5ug8IMQnFEp1VMkbP13hlewDC4fWy0S4nofChOvPB9RwYFpZn5RZGyJDnpO9hbkgb1ymFJI3g7Gj/kJ5sIHNP1erZ6UjRv52UpahRTemEIJ2/idFY6WJ1rAVd/+2ypi/h6ySgyOEqGZDoFJh87DE1SVg01gM7mHpyQoDBppYlEXPDoz9TNFFOSU0+WBOQovVX62ONYeBnSbkFq19jeZgAf844/zQHVxErsjyuhU6z3HVNR7FdV/gZMbJetaF13yvIc96oQgJknRNTdlgPx4iTEtBF6SYRAPM1hAoHUkX2q3U2W0raWD2JL7xrgh9cPzz5BVO4A3jnukvG6qt0Qkk1n/ftNw4202iHEdaxphN1w=
+    secure: 2371742f-7938-4d0c-afe2-c293678327aa
     app: chooselang
 
