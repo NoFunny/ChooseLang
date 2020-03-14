@@ -5,6 +5,8 @@ script:
 - gradle build -x test
 deploy:
   provider: heroku
+  jdk:
+    - openjdk11
   script:
     - gradle build -x test
   api_key:
