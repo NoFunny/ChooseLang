@@ -56,7 +56,7 @@ function render(item) {
         )
 }
 
-$(function () {
+$(function deleteBook() {
     $('body').on('click', '#deleteBook', function () {
         let nameBook = $(this).closest('li.shelf').text();
         let string = [];
@@ -77,7 +77,60 @@ $(function () {
                 nameBook: string
             }
         }).done((msg) => {
-            msg = JSON.parse(msg);
+            console.log(msg)
         })
     })
 });
+
+$(function deleteUser() {
+    $('body').on('click', '#deleteUser', function () {
+        if(!confirm("Вы действительно ходите удалить этого пользователя?"))
+            return;
+        let username = $(this).closest('li.user').text();
+        let string = [];
+        for(let i = 0; i < username.length; i++) {
+            if(username[i] === '\n') {
+                string = username.slice(0,i);
+            }
+        }
+        string.toString();
+        console.log(string);
+        $(this).parent().remove();
+        $.ajax({
+            type: "POST",
+            url: "/deleteUser",
+            dataType: "text",
+            data: {
+                username: string,
+            }
+        }).done((msg) => {
+            console.log(msg)
+        })
+    })
+});
+
+$(document).ready (() => {
+    $.get("/getUsers",
+        function(msg) {
+            console.log(msg);
+            $(".adminPanel")
+                .append("<div class = 'container-fluid'>" +
+                    "        <div class='row'>" +
+                    "            <div class='col'>" +
+                    "                <ul></ul>" +
+                    "            </div>" +
+                    "        </div>"
+                );
+            for(let i = 0; i < msg.length; i++)
+                renderUsers(msg[i]);
+        }
+    );
+});
+
+function renderUsers(item) {
+    return  $(".adminPanel>div>div>div>ul")
+        .append(
+            "<li class='user'>" + item.username + "<button id='deleteUser' type='button' class='close bd-dark' data-dismiss='modal' aria-label='Close' style='color:white'>\n" +
+            "                            <span aria-hidden='true'>×</span></li>"
+        )
+}

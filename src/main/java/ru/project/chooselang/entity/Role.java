@@ -13,7 +13,8 @@ import org.springframework.security.core.GrantedAuthority;
  */
 
 public enum  Role implements GrantedAuthority {
-    USER;
+    USER,
+    ADMIN;
 
     /**
      * Automatically generated method for authorities and role system in Spring Security

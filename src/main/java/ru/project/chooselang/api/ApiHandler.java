@@ -57,6 +57,16 @@ public class ApiHandler {
         cities.put(4,"NSK");
         cities.put(3,"EKB");
         cities.put(1,"MSK");
+        cities.put(11,"BRN");
+        cities.put(90,"TMSK");
+        cities.put(54,"KRS");
+        cities.put(68,"OMSK");
+        cities.put(88,"KZN");
+        cities.put(66,"NZHNOVG");
+        cities.put(105,"GROZNY");
+        cities.put(72,"PERM");
+        cities.put(104,"CHEL");
+        cities.put(78,"SAMARA");
         cities.put(2,"SPB");
 
 

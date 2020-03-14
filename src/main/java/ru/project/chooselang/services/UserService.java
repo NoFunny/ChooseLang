@@ -8,9 +8,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import ru.project.chooselang.dao.UserRepository;
 import ru.project.chooselang.entity.*;
+import org.springframework.security.crypto.password.Md4PasswordEncoder;
 
 import javax.transaction.Transactional;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 
@@ -33,6 +33,11 @@ public class UserService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
+
+    /**
+     * Creating passwordencoder object for encoding password
+     */
+    Md4PasswordEncoder md4PasswordEncoder = new Md4PasswordEncoder();
 
     /**
      * Registration user method
@@ -59,6 +64,7 @@ public class UserService implements UserDetailsService {
 
         user.setActive(true);
         user.setRoles(Collections.singleton(Role.USER));
+        user.setPassword(md4PasswordEncoder.encode(user.getPassword()));
         userRepository.save(user);
         log.error(user.toString() + " added successfully");
         return 0;

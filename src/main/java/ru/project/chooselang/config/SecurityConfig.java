@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.Md4PasswordEncoder;
 
 import javax.sql.DataSource;
 
@@ -31,6 +31,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private DataSource dataSource;
 
     /**
+     * Creating passwordencoder object for Security authentication
+     */
+    Md4PasswordEncoder md4PasswordEncoder = new Md4PasswordEncoder();
+
+    /**
      * This method is limit rights for users, that request something from server.
      * @param http
      * @throws Exception
@@ -41,8 +46,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/js/**", "/css/**", "/add_user", "/getSalary", "/updateSalary" ,"/content/**").permitAll()
-                .antMatchers("/profile/**").hasAuthority("USER")
+                .antMatchers("/", "/index", "/js/**", "/css/**", "/add_user", "/getSalary", "/content/**").permitAll()
+                .antMatchers("/profile/**").hasAnyAuthority("USER", "ADMIN")
+                .antMatchers("/getUsers", "/deleteUser", "/updateSalary").hasAnyAuthority("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -65,9 +71,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
-                .passwordEncoder(NoOpPasswordEncoder.getInstance())
+                .passwordEncoder(md4PasswordEncoder)
                 .usersByUsernameQuery("select username, password, active from usr where username=?")
-                .authoritiesByUsernameQuery("select u.username, ur.roles from usr u inner join user_role ur on u.id = ur.user_id where u.username=?");
+                .authoritiesByUsernameQuery("select username, roles from usr u inner join user_role ur on u.id = ur.user_id where u.username=?");
     }
-
 }
