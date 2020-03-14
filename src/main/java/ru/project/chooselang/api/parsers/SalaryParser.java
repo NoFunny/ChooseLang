@@ -21,7 +21,7 @@ public class SalaryParser {
     /**
      * This method get avarage salary from page
      * @param vacanciesAnswer
-     * @return
+     * @return average salary from page
      */
 
     public static Integer getAverageSalaryFromAnswer(VacanciesAnswer vacanciesAnswer){

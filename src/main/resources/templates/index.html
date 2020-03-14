@@ -508,31 +508,43 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="firstName">Имя</label>
-                        <input type="text" class="form-control" id="firstName" required="required" placeholder="First name" pattern="[A-Z][a-z]{1,15}">
+                        <input type="text" class="form-control" id="firstName" required="required" placeholder="First name" pattern="[A-Z][a-z]{4,15}">
+                        <div class="valid-feedback">Верно!</div>
+                        <div class="invalid-feedback">Не верно!</div>
                         <small id="" class="form-text text-muted">С большой буквы латинского алфавита от 4 до 15 символов</small>
                     </div>
                     <div class="form-group">
                         <label for="lastName">Фамилия</label>
                         <input type="text" class="form-control" id="lastName" required="required" placeholder="Last name" pattern="[A-Z][a-z]{4,15}">
+                        <div class="valid-feedback">Врно!</div>
+                        <div class="invalid-feedback">Не верно</div>
                         <small id="" class="form-text text-muted">С большой буквы латинского алфавита от 4 до 15 символов</small>
                     </div>
                     <div class="form-group">
                         <label for="upUsername">Логин</label>
                         <input type="text" class="form-control" id="upUsername" required="required" placeholder="Name" pattern="[0-9a-zA-Z]{6,12}">
+                        <div class="valid-feedback">Верно!</div>
+                        <div class="invalid-feedback">Не верно!</div>
                         <small id="" class="form-text text-muted">Большие и маленькие буквы латинского алфавита и цифры от 6 до 12 символов</small>
                     </div>
                     <div class="form-group">
                        <label for="upPassword">Пароль</label>
                        <input type="password" class="form-control" id="upPassword" required="required" placeholder="Password" pattern="[A-Za-z0-9]{6,20}">
+                        <div class="valid-feedback">Верно!</div>
+                        <div class="invalid-feedback">Не верно!</div>
                         <small id="" class="form-text text-muted">Большие и маленькие буквы латинского алфавита и цифры от 6 до 20 символов</small>
                     </div>
                     <div class="form-group">
                        <label for="repeat_pass">Повторите пароль</label>
                        <input type="password" class="form-control" id="repeat_pass" required="required" placeholder="Repeat password" pattern="[A-Za-z0-9]{6,20}">
+                        <div class="valid-feedback">Верно!</div>
+                        <div class="invalid-feedback">Не верно!</div>
                     </div>
                     <div class="form-group">
                        <label for="mail">Почта</label>
                        <input type="email" class="form-control" aria-describedby="emailHelp" id="mail" required="required" placeholder="Email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+                        <div class="valid-feedback">Верно!</div>
+                        <div class="invalid-feedback">Не верно!</div>
                     </div>
                 </div>
             </div>
@@ -563,7 +575,7 @@
                     <div class="modal-body">
                       <div class="form-group">
                           <label for="username">Логин</label>
-                          <input type="text" id="username" class="form-control" name="username" required="required" pattern="[0-9a-zA-Z]{4,15}" placeholder="Name">
+                          <input type="text" id="username" class="form-control" name="username" required="required" pattern="[0-9a-zA-Z]{6,12}" placeholder="Name">
                       </div>
                       <div class="form-group">
                           <label for="password">Пароль</label>

@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import ru.project.chooselang.dao.UserRepository;
 import ru.project.chooselang.entity.Book;
 import ru.project.chooselang.api.ApiHandler;
 import ru.project.chooselang.entity.User;
@@ -14,7 +13,6 @@ import ru.project.chooselang.utils.SplitURL;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Set;
 
 /**
@@ -81,16 +79,14 @@ public class UserController {
 
     @RequestMapping(value = "/getSalary", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public String getSalary(@RequestBody String object) throws IOException {
-        byte answer = 1;
         ArrayList<String> req = SplitURL.split(object);
         log.warn("Got request ===" + req.toString());
-
         return apiHandler.returnCityData(req.get(0));
     }
 
     /**
      * Get fullname user from DB method
-     * @param object
+     * @param object contain username
      * @return Object user
      * @throws UnsupportedEncodingException
      */
@@ -103,6 +99,13 @@ public class UserController {
 
     }
 
+    /**
+     * This method needed for adding a new book to the user in the library
+     * @param object contain nameBook and username
+     * @return response code
+     * @throws UnsupportedEncodingException
+     */
+
     @RequestMapping(value = "/add_book", produces = MediaType.APPLICATION_JSON_VALUE)
     public byte addBook(@RequestBody String object) throws UnsupportedEncodingException {
         ArrayList<String> req = SplitURL.split(object);
@@ -113,11 +116,25 @@ public class UserController {
         return answer;
     }
 
+    /**
+     * This method needed for return user book collection
+     * @param object contain username
+     * @return user book collection
+     * @throws UnsupportedEncodingException
+     */
+
     @RequestMapping(value = "/get_book", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Collection<Book> getBook(@RequestBody String object) throws UnsupportedEncodingException {
+    public Set<Book> getBook(@RequestBody String object) throws UnsupportedEncodingException {
         ArrayList<String> req = SplitURL.split(object);
         return userService.getBook(req.get(0));
     }
+
+    /**
+     * This method deletes a book from a user by name
+     * @param object contain username and nameBook
+     * @return response code
+     * @throws UnsupportedEncodingException
+     */
 
     @RequestMapping(value = "/deleteBook", produces = MediaType.APPLICATION_JSON_VALUE)
     public Byte deleteBook(@RequestBody String object) throws UnsupportedEncodingException {

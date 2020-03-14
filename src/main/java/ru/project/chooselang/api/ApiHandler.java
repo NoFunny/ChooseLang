@@ -72,7 +72,7 @@ public class ApiHandler {
     /**
      * This method return data by city
      * @param city
-     * @return
+     * @return JSON object contains citySalaries object with his fields
      * @throws JsonProcessingException
      */
 

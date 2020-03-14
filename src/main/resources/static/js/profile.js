@@ -25,7 +25,6 @@ $(document).ready (() => {
    }).done((msg) => {
        let message = JSON.parse(msg);
        let uniqueMsg = message.filter((item) => itemCheck(item));
-       console.log(uniqueMsg);
        $(".myLibrary")
            .append("<div class = 'container-fluid'>" +
                "        <div class='row'>" +
@@ -59,9 +58,7 @@ function render(item) {
 
 $(function () {
     $('body').on('click', '#deleteBook', function () {
-        console.log("123123");
         let nameBook = $(this).closest('li.shelf').text();
-        console.log(Array.from(nameBook));
         let string = [];
         for(let i = 0; i < nameBook.length; i++) {
             if(nameBook[i] === '\n') {
@@ -69,9 +66,7 @@ $(function () {
             }
         }
         string.toString();
-        console.log(string);
         let user = $("#userLogin").text();
-        console.log(user);
         $(this).parent().remove();
         $.ajax({
             type: "POST",
@@ -83,7 +78,6 @@ $(function () {
             }
         }).done((msg) => {
             msg = JSON.parse(msg);
-            console.log(msg);
         })
     })
 });

@@ -11,6 +11,14 @@ ul.navigation {
 	align-items: center;
 }
 
+input:invalid {
+	border: 2px dashed red;
+}
+
+input:valid {
+	border: 2px solid #1cff00;
+}
+
 .head {
 	background-color: rgba(14,26,100,1);
 }

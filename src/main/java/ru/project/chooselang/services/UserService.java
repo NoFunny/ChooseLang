@@ -36,7 +36,7 @@ public class UserService implements UserDetailsService {
 
     /**
      * Registration user method
-     * @param user
+     * @param user object to be added
      * @return result registration new User to DB
      */
 
@@ -82,18 +82,30 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
+    /**
+     * This method adds a book to a specific user
+     * @param nameBook to be added
+     * @param username which add a book
+     * @return response code
+     */
 
     @Transactional
-    public byte addBook(String book, String username) {
+    public byte addBook(String nameBook, String username) {
         if(userRepository.existsByUsername(username)) {
             User user = userRepository.findByUsername(username);
             Set<Book> newBook= user.getBooks();
-            newBook.add(new Book(book));
+            newBook.add(new Book(nameBook));
             user.setBooks(newBook);
             return 0;
         }
         return 1;
     }
+
+    /**
+     * This method returned a collection of books by a specific user
+     * @param username whose books you need to get
+     * @return collection of books by a specific user
+     */
 
     @Transactional
     public Set<Book> getBook(String username) {
@@ -103,6 +115,13 @@ public class UserService implements UserDetailsService {
         }
         return null;
     }
+
+    /**
+     *
+     * @param username whose book you want to delete
+     * @param nameBook to be deleted
+     * @return response code
+     */
 
     @Transactional
     public Byte deleteBook(String username, String nameBook) {

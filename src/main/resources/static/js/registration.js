@@ -6,13 +6,8 @@ $(function () {
         let password = $("#upPassword").val();
         let passwd = $('#repeat_pass').val();
         let email = $("#mail").val();
-        if(firstName == null || lastName == null || username == null || password == null || email == null) {
-            alert("Не все поля заполнены!");
-            return;
-        }
-        if(password !== passwd) {
+        if (password !== passwd) {
             alert("Пароли не совпадают!");
-            return;
         }
         $.ajax({
             type: "POST",
@@ -26,11 +21,16 @@ $(function () {
                 password: password
             }
         }).done((msg) => {
-            if (msg === 0) {
+            if (msg == 0) {
+                alert("Регистрация успешно завершена!");
                 $("#modalUp").modal("toggle")
+            } else if(msg == 1) {
+                alert('Пользователь с такой почтой уже существует');
+            } else if(msg == 2) {
+                alert('Пользователь с таким логином уже существует');
+            } else if(msg == 3) {
+                alert('Пользователь с таким логином и почтой уже существует');
             }
-            alert(msg);
         });
     });
 });
-

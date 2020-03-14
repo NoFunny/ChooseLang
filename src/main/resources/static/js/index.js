@@ -1,5 +1,4 @@
 $(document).ready (() => {
-    // console.log($(window).width());
     if(($(window).width() > 1800) && ($(window).width() < 2000)) {
         $('.main-photo').height(1015);
     }else if(($(window).width() > 1300) && ($(window).width() === 1400)) {
