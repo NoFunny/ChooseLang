@@ -26,8 +26,9 @@ public class SalaryService {
     private SalaryRepository salaryRepository;
 
     /**
-     * Create salary method
-     * @param avgSalary
+     * Create salary in DB method
+     * @param avgSalary object contain city
+     * lang, level programmers and average salary
      */
 
     public void createSalary(AvgSalary avgSalary) {
@@ -48,7 +49,7 @@ public class SalaryService {
      * @param lang
      * @param city
      * @param lvl
-     * @return
+     * @return object AvgSalary
      */
 
     public AvgSalary findForCity(String lang, String city, String lvl){

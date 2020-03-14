@@ -75,11 +75,11 @@ public class SalaryRefresher {
 
     /**
      * This method send request to hh api and compute
-     * count vacancies and return their number
+     * count vacancies
      * @param lang
      * @param area
      * @param level
-     * @return
+     * @return Vacancies count by lang area and level programming
      */
 
     public static Integer getVacanciesCount(String lang, String area, String level){

@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * Book representation class
@@ -19,6 +20,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
+@Table(name = "book")
 @NoArgsConstructor
 public class Book {
 
@@ -28,12 +30,16 @@ public class Book {
 
     private String name;
 
+    @ManyToMany( fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "u_books")
+    Set<User> user;
+
     /**
      * Constructor for Book object
-     * @param name
+     * @param name book
      */
 
-    Book(String name) {
+    public Book(String name) {
         this.name = name;
     }
 

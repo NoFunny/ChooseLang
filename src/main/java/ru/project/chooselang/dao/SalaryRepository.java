@@ -21,7 +21,8 @@ public interface SalaryRepository extends CrudRepository<AvgSalary,Long> {
      * @param lang
      * @param city
      * @param lvl
-     * @return
+     * @return true or false one or another AvgSalary
+     * depending on the transferred lang, city and level programming
      */
 
     boolean existsByLangAndCityAndLvl(String lang, String city, String lvl);

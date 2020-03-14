@@ -32,7 +32,7 @@ public class RequestHandler {
      * @param level
      * @param page
      * @param perPage
-     * @return
+     * @return VacanciesAnswer object with his fields
      * @throws IOException
      */
 

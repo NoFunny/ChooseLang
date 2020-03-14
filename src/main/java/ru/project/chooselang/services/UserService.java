@@ -10,14 +10,18 @@ import ru.project.chooselang.dao.UserRepository;
 import ru.project.chooselang.entity.*;
 
 import javax.transaction.Transactional;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Set;
+
 
 /**
  * Salary service class
- * @author skwardlow
+ * @author skwardlow, NoFunny
  * @version 1.0
  * @see UserDetailsService
  */
+
 
 @Slf4j
 @Service
@@ -32,8 +36,8 @@ public class UserService implements UserDetailsService {
 
     /**
      * Registration user method
-     * @param user
-     * @return
+     * @param user object to be added
+     * @return result registration new User to DB
      */
 
     @Transactional
@@ -62,8 +66,8 @@ public class UserService implements UserDetailsService {
 
     /**
      * Get fullname user method
-     * @param username
-     * @return
+     * @param username username by object user
+     * @return User object
      */
 
     @Transactional
@@ -79,11 +83,65 @@ public class UserService implements UserDetailsService {
     }
 
     /**
+     * This method adds a book to a specific user
+     * @param nameBook to be added
+     * @param username which add a book
+     * @return response code
+     */
+
+    @Transactional
+    public byte addBook(String nameBook, String username) {
+        if(userRepository.existsByUsername(username)) {
+            User user = userRepository.findByUsername(username);
+            Set<Book> newBook= user.getBooks();
+            newBook.add(new Book(nameBook));
+            user.setBooks(newBook);
+            return 0;
+        }
+        return 1;
+    }
+
+    /**
+     * This method returned a collection of books by a specific user
+     * @param username whose books you need to get
+     * @return collection of books by a specific user
+     */
+
+    @Transactional
+    public Set<Book> getBook(String username) {
+        if(userRepository.existsByUsername(username)) {
+            User user = userRepository.findByUsername(username);
+            return user.getBooks();
+        }
+        return null;
+    }
+
+    /**
+     *
+     * @param username whose book you want to delete
+     * @param nameBook to be deleted
+     * @return response code
+     */
+
+    @Transactional
+    public Byte deleteBook(String username, String nameBook) {
+        if(userRepository.existsByUsername(username)) {
+            User user = userRepository.findByUsername(username);
+            log.error("LOG NAMEBOOOOOK ===== " + nameBook);
+            Set<Book> newListBook = getBook(username);
+            newListBook.removeIf(prop -> prop.getName().equals(nameBook));
+            return 0;
+        }
+        return 1;
+    }
+
+    /**
      * load user by username automatically generated method
-     * @param username
-     * @return
+     * @param username username by object user
+     * @return user object
      * @throws UsernameNotFoundException
      */
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

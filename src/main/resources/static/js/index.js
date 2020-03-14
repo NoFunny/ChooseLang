@@ -1,5 +1,4 @@
 $(document).ready (() => {
-    console.log($(window).width());
     if(($(window).width() > 1800) && ($(window).width() < 2000)) {
         $('.main-photo').height(1015);
     }else if(($(window).width() > 1300) && ($(window).width() === 1400)) {
@@ -20,10 +19,6 @@ $(document).ready (() => {
         $('.main-photo').height(143);
     }
 });
-
-// window.onload =  () => {
-//     jQuery(".selected_city").text(ymaps.geolocation.city);
-// };
 
 $(window).on('scroll', () => {
     let scrollCoef = 0.0002;
@@ -61,25 +56,30 @@ $(function () {
 
 $(function () {
     $(".checked").click(function() {
-        let book = $(this).parent().text();
-        let username = $("#userLogin").text();
-        console.log(book);
-        $.ajax({
-            type: "POST",
-            url: "/add_book",
-            dataType: "text",
-            data: {
-                book: book,
-                username: username
-            }
-        }).done((msg) => {
-            if(msg) {
-                console.log("OK!");
-            }else
-                console.log("Error!");
-        });
+        if(this.checked === true) {
+            let book = $(this).parent().text();
+            let username = $("#userLogin").text();
+            console.log(book);
+            $.ajax({
+                type: "POST",
+                url: "/add_book",
+                dataType: "text",
+                data: {
+                    book: book,
+                    username: username
+                }
+            }).done((msg) => {
+                if (msg) {
+                    console.log("OK!");
+                } else
+                    console.log("Error!");
+            });
+        }else {
+            console.log("Отмена");
+        }
     });
 });
+
 
 $(function () {
     $(".updateSalary").click(function () {

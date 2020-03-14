@@ -34,19 +34,19 @@
             <div class="collapse navbar-collapse navbar_list justify-content-center" id="navbarToggler">
                 <ul class="navbar-nav ml-auto mr-2 navigation">
                     <li class="nav-item active">
-                        <a href="/"  class="nav-link text-light nav-item_word">Home</a>
+                        <a href="/"  class="nav-link text-light nav-item_word">Главная</a>
                     </li>
                     <li class="nav-item active">
-                        <a type="button" th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger; align-self:  center "  data-toggle="modal" data-target=".bd-signUp-modal-sm">Sign up</a>
+                        <a type="button" th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger; align-self:  center "  data-toggle="modal" data-target=".bd-signUp-modal-sm">Регистрация</a>
                     </li>
                     <li class="nav-item active">
-                        <a type="button"  th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger "  data-toggle="modal" data-target=".bd-signIn-modal-sm">Sign in</a>
+                        <a type="button"  th:unless="${#httpServletRequest.remoteUser}" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger "  data-toggle="modal" data-target=".bd-signIn-modal-sm">Вход</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light nav-item_word" th:inline="text" href="/profile" id = "userLogin">[[${#httpServletRequest.remoteUser}]]</a>
                     </li>
                     <li class="nav-item active" >
-                        <a th:if="${#httpServletRequest.remoteUser}" href="/logout" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger ">Exit</a>
+                        <a th:if="${#httpServletRequest.remoteUser}" href="/logout" class="nav-link text-light nav-item_word" style="background: transparent; border: 0;  font-weight: bold; font-family: monospace; font-size: larger ">Выход</a>
                     </li>
                 </ul>
             </div>
@@ -54,32 +54,21 @@
     </header>
     <main th:if="${#httpServletRequest.remoteUser}">
     <div class="container-fluid">
-        <div class="row justify-content-left">
-            <div class="col">Иконка
-                <img src="" alt="" class="iconProfile">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <form action="" method="post" enctype="multipart/form-data">
-                    <input type="file" name="icon" accept="image/bmp,image/jpeg,image/png">
-                    <button type="submit">Загрузить</button>
-                </form>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-6 col-6 card_profile">
                 <ul class="fullName">
                     <li class="nav-item" id="firstName"></li>
                     <li class="nav-item" id="lastName"></li>
                 </ul>
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col">
                 <div class="myLibrary">
-                    Книги
+                    Библиотека
                 </div>
+                <br>
             </div>
         </div>
     </div>
