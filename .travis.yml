@@ -1,11 +1,10 @@
 language: java
 jdk:
- - openjdk11
+- openjdk11
 script:
-  - gradle build -x test
+- gradle build -x test
 deploy:
   provider: heroku
   api_key:
-    secure: 2371742f-7938-4d0c-afe2-c293678327aa
-    app: chooselang
-
+    secure: qKoTOmLQNZqsd5S0BTfKN1pc3mQggPaa5nAWzkEIzibwK2Lhcl32jmG0eC6sU+2fS2fPWPxftQMo+xwHzDx/o2nY4ahifV5dtqr5L8hfAQWtGjHiVQBSq0mO7pfFQ+ueXZric6GVfivMQICpnKzsiGO7yZGFASaw2ToGNG7UZaDjX7QEsQ6sgKqn44cdUvF5+dHjl+bMzPigMdUaFwE71nXPRh26VY1ChPsMeUBHqHRv+9D/99Fa48Z+lsuBHxnOb61LIgsIuNziILSUXW4FBKsMcJ+1egi8W8oX6l5HjGQu7LW+cdFvCNh9kQ6BTsJUFwj8myv1vO/HKRQaxfYaTKbEsDO5rXkvgoLZvRHN4IPWGsiPnhbuP0UoMcJuJAJ7UujpoxMK22DAzy33LkENKLx354fDcXnxCXHZ1iQMK7uzyYQZu1dk6qd474nYYBlhjtsyLMbsqEsZUM07KPw5F7JfH5zYIY8qOMTH/kD3akaAN2HoNqyn8u0e/R/HDRM8uuW23TV841WXTlxs7u7NTZQYJc7MjBiB73xONL2fFmAEnkL3xLPKWZsNXHqTbz8YR/AWsdKp68xitUZoKbkI70KZ7KIhz63sNx/6Bjl/t53w6EsSasO0hIjEP4to4hJQ7QCzpFxXtJLiBQoadBtB79MBD+K1EyVzjjPc2y9R0dw=
+  app: chooselang
