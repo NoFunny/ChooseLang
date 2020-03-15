@@ -25,9 +25,9 @@ $(document).ready (() => {
             "           <div class='row'>" +
             "                    <div class='col'>" +
             "                           <ul>" +
-            "                                <li> З/П Джун Не выбран город </li>" +
-            "                                <li> З/П Миддл Не выбран город </li>" +
-            "                                <li> З/П Сеньор Не выбран город </li>" +
+            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary middle : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary senior : No data </li>" +
             "                           </ul>" +
             "                   </div>" +
             "           </div>" +
@@ -38,9 +38,9 @@ $(document).ready (() => {
             "           <div class='row'>" +
             "                    <div class='col'>" +
             "                           <ul>" +
-            "                                <li> З/П Джун Не выбран город </li>" +
-            "                                <li> З/П Миддл Не выбран город </li>" +
-            "                                <li> З/П Сеньор Не выбран город </li>" +
+            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary middle : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary senior : No data </li>" +
             "                           </ul>" +
             "                   </div>" +
             "           </div>" +
@@ -51,9 +51,9 @@ $(document).ready (() => {
             "           <div class='row'>" +
             "                    <div class='col'>" +
             "                           <ul>" +
-            "                                <li> З/П Джун Не выбран город </li>" +
-            "                                <li> З/П Миддл Не выбран город </li>" +
-            "                                <li> З/П Сеньор Не выбран город </li>" +
+            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary middle : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary senior : No data </li>" +
             "                           </ul>" +
             "                   </div>" +
             "           </div>" +
@@ -64,9 +64,9 @@ $(document).ready (() => {
             "           <div class='row'>" +
             "                    <div class='col'>" +
             "                           <ul>" +
-            "                                <li> З/П Джун Не выбран город </li>" +
-            "                                <li> З/П Миддл Не выбран город </li>" +
-            "                                <li> З/П Сеньор Не выбран город </li>" +
+            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary middle : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary senior : No data </li>" +
             "                           </ul>" +
             "                   </div>" +
             "           </div>" +
@@ -77,9 +77,9 @@ $(document).ready (() => {
             "           <div class='row'>" +
             "                    <div class='col'>" +
             "                           <ul>" +
-            "                                <li> З/П Джун Не выбран город </li>" +
-            "                                <li> З/П Миддл Не выбран город </li>" +
-            "                                <li> З/П Сеньор Не выбран город </li>" +
+            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary middle : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary senior : No data </li>" +
             "                           </ul>" +
             "                   </div>" +
             "           </div>" +
@@ -90,9 +90,9 @@ $(document).ready (() => {
             "           <div class='row'>" +
             "                    <div class='col'>" +
             "                           <ul>" +
-            "                                <li> З/П Джун Нету данных </li>" +
-            "                                <li> З/П Миддл Нету данных </li>" +
-            "                                <li> З/П Сеньор Нету данных </li>" +
+            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary middle : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary senior : No data </li>" +
             "                           </ul>" +
             "                   </div>" +
             "           </div>" +
@@ -103,9 +103,9 @@ $(document).ready (() => {
             "           <div class='row'>" +
             "                    <div class='col'>" +
             "                           <ul>" +
-            "                                <li> З/П Джун Не выбран город </li>" +
-            "                                <li> З/П Миддл Не выбран город </li>" +
-            "                                <li> З/П Сеньор Не выбран город</li>" +
+            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary middle : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary senior : No data</li>" +
             "                           </ul>" +
             "                   </div>" +
             "           </div>" +
@@ -116,9 +116,9 @@ $(document).ready (() => {
             "           <div class='row'>" +
             "                    <div class='col'>" +
             "                           <ul>" +
-            "                                <li> З/П Джун Нету данных </li>" +
-            "                                <li> З/П Миддл Нету данных </li>" +
-            "                                <li> З/П Сеньор Нету данных </li>" +
+            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary middle : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary senior : No data </li>" +
             "                           </ul>" +
             "                   </div>" +
             "           </div>" +
@@ -129,9 +129,9 @@ $(document).ready (() => {
             "           <div class='row'>" +
             "                    <div class='col'>" +
             "                           <ul>" +
-            "                                <li> З/П Джун Не выбран город </li>" +
-            "                                <li> З/П Миддл Не выбран город </li>" +
-            "                                <li> З/П Сеньор Не выбран город </li>" +
+            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : No data </li>" +
+            "                                <li style='margin-bottom: 25px'>Salary middle : No data</li>" +
+            "                                <li style='margin-bottom: 25px'> Salary senior : No data </li>" +
             "                           </ul>" +
             "                   </div>" +
             "           </div>" +
@@ -142,9 +142,9 @@ $(document).ready (() => {
             "           <div class='row'>" +
             "                    <div class='col'>" +
             "                           <ul>" +
-            "                                <li> З/П Джун Не выбран город </li>" +
-            "                                <li> З/П Миддл Не выбран город </li>" +
-            "                                <li> З/П Сеньор Не выбран город </li>" +
+            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary middle : No data </li>" +
+            "                                <li style='margin-bottom: 25px'> Salary senior : No data </li>" +
             "                           </ul>" +
             "                   </div>" +
             "           </div>" +
@@ -239,7 +239,7 @@ $(function () {
                 if(message.langs[i].name == "Python") {
                     for(let prop in message.langs[0].levels) {
                         if (message.langs[i].levels[prop] == -1) {
-                            message.langs[i].levels[prop] = "Нету данных";
+                            message.langs[i].levels[prop] = "No data";
                         }
                     }
                     $(".python_salary>div").remove();
@@ -248,9 +248,9 @@ $(function () {
                             "           <div class='row'>" +
                             "                    <div class='col'>" +
                             "                           <ul>" +
-                            "                                <li> З/П Джун " + message.langs[i].levels.junior + "</li>" +
-                            "                                <li> З/П Миддл " + message.langs[i].levels.middle + "</li>" +
-                            "                                <li> З/П Сеньор " + message.langs[i].levels.senior + "</li>" +
+                            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : " + message.langs[i].levels.junior + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary middle : " + message.langs[i].levels.middle + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary senior : " + message.langs[i].levels.senior + " &#8381</li>" +
                             "                           </ul>" +
                             "                   </div>" +
                             "           </div>" +
@@ -258,7 +258,7 @@ $(function () {
                 }else if(message.langs[i].name == "Java") {
                     for(let prop in message.langs[0].levels) {
                         if (message.langs[i].levels[prop] == -1) {
-                            message.langs[i].levels[prop] = "Нету данных";
+                            message.langs[i].levels[prop] = "No data";
                         }
                     }
                     $(".java_salary>div").remove();
@@ -267,9 +267,9 @@ $(function () {
                             "           <div class='row'>" +
                             "                    <div class='col'>" +
                             "                           <ul>" +
-                            "                                <li> З/П Джун " + message.langs[i].levels.junior + "</li>" +
-                            "                                <li> З/П Миддл " + message.langs[i].levels.middle + "</li>" +
-                            "                                <li> З/П Сеньор " + message.langs[i].levels.senior + "</li>" +
+                            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : " + message.langs[i].levels.junior + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary middle : " + message.langs[i].levels.middle + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary senior : " + message.langs[i].levels.senior + " &#8381</li>" +
                             "                           </ul>" +
                             "                   </div>" +
                             "           </div>" +
@@ -277,7 +277,7 @@ $(function () {
                 }else if(message.langs[i].name == "C") {
                     for(let prop in message.langs[0].levels) {
                         if (message.langs[i].levels[prop] == -1) {
-                            message.langs[i].levels[prop] = "Нету данных";
+                            message.langs[i].levels[prop] = "No data";
                         }
                     }
                     $(".ci_salary>div").remove();
@@ -286,9 +286,9 @@ $(function () {
                             "           <div class='row'>" +
                             "                    <div class='col'>" +
                             "                           <ul>" +
-                            "                                <li> З/П Джун " + message.langs[i].levels.junior + "</li>" +
-                            "                                <li> З/П Миддл " + message.langs[i].levels.middle + "</li>" +
-                            "                                <li> З/П Сеньор " + message.langs[i].levels.senior + "</li>" +
+                            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : " + message.langs[i].levels.junior + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary middle : " + message.langs[i].levels.middle + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary senior : " + message.langs[i].levels.senior + " &#8381</li>" +
                             "                           </ul>" +
                             "                   </div>" +
                             "           </div>" +
@@ -296,7 +296,7 @@ $(function () {
                 }else if(message.langs[i].name == "PHP") {
                     for(let prop in message.langs[0].levels) {
                         if (message.langs[i].levels[prop] == -1) {
-                            message.langs[i].levels[prop] = "Нету данных";
+                            message.langs[i].levels[prop] = "No data";
                         }
                     }
                     $(".php_salary>div").remove();
@@ -305,9 +305,9 @@ $(function () {
                             "           <div class='row'>" +
                             "                    <div class='col'>" +
                             "                           <ul>" +
-                            "                                <li> З/П Джун " + message.langs[i].levels.junior + "</li>" +
-                            "                                <li> З/П Миддл " + message.langs[i].levels.middle + "</li>" +
-                            "                                <li> З/П Сеньор " + message.langs[i].levels.senior + "</li>" +
+                            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : " + message.langs[i].levels.junior + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary middle : " + message.langs[i].levels.middle + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary senior : " + message.langs[i].levels.senior + " &#8381</li>" +
                             "                           </ul>" +
                             "                   </div>" +
                             "           </div>" +
@@ -315,7 +315,7 @@ $(function () {
                 }else if(message.langs[i].name == "CPP") {
                     for(let prop in message.langs[0].levels) {
                         if (message.langs[i].levels[prop] == -1) {
-                            message.langs[i].levels[prop] = "Нету данных";
+                            message.langs[i].levels[prop] = "No data";
                         }
                     }
                     $(".cpp_salary>div").remove();
@@ -324,9 +324,9 @@ $(function () {
                             "           <div class='row'>" +
                             "                    <div class='col'>" +
                             "                           <ul>" +
-                            "                                <li> З/П Джун " + message.langs[i].levels.junior + "</li>" +
-                            "                                <li> З/П Миддл " + message.langs[i].levels.middle + "</li>" +
-                            "                                <li> З/П Сеньор " + message.langs[i].levels.senior + "</li>" +
+                            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : " + message.langs[i].levels.junior + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary middle : " + message.langs[i].levels.middle + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary senior : " + message.langs[i].levels.senior + " &#8381</li>" +
                             "                           </ul>" +
                             "                   </div>" +
                             "           </div>" +
@@ -334,7 +334,7 @@ $(function () {
                 }else if(message.langs[i].name == "JS") {
                     for(let prop in message.langs[0].levels) {
                         if (message.langs[i].levels[prop] == -1) {
-                            message.langs[i].levels[prop] = "Нету данных";
+                            message.langs[i].levels[prop] = "No data";
                         }
                     }
                     $(".js_salary>div").remove();
@@ -343,9 +343,9 @@ $(function () {
                             "           <div class='row'>" +
                             "                    <div class='col'>" +
                             "                           <ul>" +
-                            "                                <li> З/П Джун " + message.langs[i].levels.junior + "</li>" +
-                            "                                <li> З/П Миддл " + message.langs[i].levels.middle + "</li>" +
-                            "                                <li> З/П Сеньор " + message.langs[i].levels.senior + "</li>" +
+                            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : " + message.langs[i].levels.junior + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary middle : " + message.langs[i].levels.middle + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary senior : " + message.langs[i].levels.senior + " &#8381</li>" +
                             "                           </ul>" +
                             "                   </div>" +
                             "           </div>" +
@@ -353,7 +353,7 @@ $(function () {
                 }else if(message.langs[i].name == "CSH") {
                     for(let prop in message.langs[0].levels) {
                         if (message.langs[i].levels[prop] == -1) {
-                            message.langs[i].levels[prop] = "Нету данных";
+                            message.langs[i].levels[prop] = "No data";
                         }
                     }
                     $(".csh_salary>div").remove();
@@ -362,9 +362,9 @@ $(function () {
                             "           <div class='row'>" +
                             "                    <div class='col'>" +
                             "                           <ul>" +
-                            "                                <li> З/П Джун " + message.langs[i].levels.junior + "</li>" +
-                            "                                <li> З/П Миддл " + message.langs[i].levels.middle + "</li>" +
-                            "                                <li> З/П Сеньор " + message.langs[i].levels.senior + "</li>" +
+                            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : " + message.langs[i].levels.junior + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary middle : " + message.langs[i].levels.middle + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary senior : " + message.langs[i].levels.senior + " &#8381</li>" +
                             "                           </ul>" +
                             "                   </div>" +
                             "           </div>" +
@@ -372,7 +372,7 @@ $(function () {
                 }else if(message.langs[i].name == "Ruby") {
                     for(let prop in message.langs[0].levels) {
                         if (message.langs[i].levels[prop] == -1) {
-                            message.langs[i].levels[prop] = "Нету данных";
+                            message.langs[i].levels[prop] = "No data";
                         }
                     }
                     $(".ruby_salary>div").remove();
@@ -381,9 +381,9 @@ $(function () {
                             "           <div class='row'>" +
                             "                    <div class='col'>" +
                             "                           <ul>" +
-                            "                                <li> З/П Джун " + message.langs[i].levels.junior + "</li>" +
-                            "                                <li> З/П Миддл " + message.langs[i].levels.middle + "</li>" +
-                            "                                <li> З/П Сеньор " + message.langs[i].levels.senior + "</li>" +
+                            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : " + message.langs[i].levels.junior + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary middle : " + message.langs[i].levels.middle + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary senior : " + message.langs[i].levels.senior + " &#8381</li>" +
                             "                           </ul>" +
                             "                   </div>" +
                             "           </div>" +
@@ -391,7 +391,7 @@ $(function () {
                 }else if(message.langs[i].name == "Objective+C") {
                     for(let prop in message.langs[0].levels) {
                         if (message.langs[i].levels[prop] == -1) {
-                            message.langs[i].levels[prop] = "Нету данных";
+                            message.langs[i].levels[prop] = "No data";
                         }
                     }
                     $(".obci_salary>div").remove();
@@ -400,9 +400,9 @@ $(function () {
                             "           <div class='row'>" +
                             "                    <div class='col'>" +
                             "                           <ul>" +
-                            "                                <li> З/П Джун " + message.langs[i].levels.junior + "</li>" +
-                            "                                <li> З/П Миддл " + message.langs[i].levels.middle + "</li>" +
-                            "                                <li> З/П Сеньор " + message.langs[i].levels.senior + "</li>" +
+                            "                                <li style='margin-bottom: 25px; margin-top: 10px'> Salary junior : " + message.langs[i].levels.junior + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary middle : " + message.langs[i].levels.middle + " &#8381</li>" +
+                            "                                <li style='margin-bottom: 25px'> Salary senior : " + message.langs[i].levels.senior + " &#8381</li>" +
                             "                           </ul>" +
                             "                   </div>" +
                             "           </div>" +
