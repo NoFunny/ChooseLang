@@ -4,7 +4,7 @@ jdk:
 os: linux
 dist: xenial
 script:
-- gradlew build
+- ./gradlew build
 deploy:
   provider: heroku
   api_key:
