@@ -3,8 +3,9 @@ jdk:
 - openjdk11
 os: linux
 dist: xenial
+install: gradle
 script:
-- ./gradlew build
+- gradle build
 deploy:
   provider: heroku
   api_key:
