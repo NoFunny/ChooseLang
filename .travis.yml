@@ -4,7 +4,7 @@ jdk:
 os: linux
 dist: xenial
 script:
-- ./gradle build
+- gradle build --scan -s
 deploy:
   provider: heroku
   api_key:
