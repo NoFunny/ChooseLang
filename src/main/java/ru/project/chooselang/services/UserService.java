@@ -99,7 +99,7 @@ public class UserService implements UserDetailsService {
     public byte addBook(String nameBook, String username) {
         if(userRepository.existsByUsername(username)) {
             User user = userRepository.findByUsername(username);
-            Set<Book> newBook= user.getBooks();
+            Set<Book> newBook = user.getBooks();
             newBook.add(new Book(nameBook));
             user.setBooks(newBook);
             return 0;
