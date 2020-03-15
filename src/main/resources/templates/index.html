@@ -306,18 +306,18 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="objc_tab" role="tabpanel" aria-labelledby="objc-tab" th:unless="${#httpServletRequest.remoteUser}">
+            <div class="tab-pane fade" id="objc_tab" role="tabpanel" aria-labelledby="objc-tab" th:if="${#httpServletRequest.remoteUser}">
                 <div class="col-xl-6">
                     <div class="row">
                         <div class="col">Книги
                             <ul class="lib_list">
-                                <li>Programming on Objective-C Steven Kochan</li>
-                                <li>Iphone SDK Application Development Jonathan Zdiarski</li>
-                                <li>Objective-C 2.0 and Mac Programming Mark Dalrymple</li>
-                                <li>Application development for iPhone. Complete guide</li>
-                                <li>Head First iPhone Development</li>
-                                <li>Objective-C Programming For Dummies</li>
-                                <li>Learn Objective-C on the Mac (Learn Series)</li>
+                                <li><input type="checkbox" class="checked">Programming on Objective-C Steven Kochan</li>
+                                <li><input type="checkbox" class="checked">Iphone SDK Application Development Jonathan Zdiarski</li>
+                                <li><input type="checkbox" class="checked">Objective-C 2.0 and Mac Programming Mark Dalrymple</li>
+                                <li><input type="checkbox" class="checked">Application development for iPhone. Complete guide</li>
+                                <li><input type="checkbox" class="checked">Head First iPhone Development</li>
+                                <li><input type="checkbox" class="checked">Objective-C Programming For Dummies</li>
+                                <li><input type="checkbox" class="checked">Learn Objective-C on the Mac (Learn Series)</li>
                             </ul>
                         </div>
                     </div>
