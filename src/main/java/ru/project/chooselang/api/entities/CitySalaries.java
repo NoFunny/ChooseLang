@@ -9,9 +9,11 @@ import java.util.List;
 
 
 /**
- * This class nedded to created CitySalaries object
+ * This class needed to created CitySalaries object
  * @author skwardlow
  * @version 1.0
+ * @see NoArgsConstructor
+ * @see AllArgsConstructor
  */
 
 @Getter
@@ -19,6 +21,16 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CitySalaries {
+
+    /**
+     * City CitySalaries field
+     */
+
     private String city;
+
+    /**
+     * Langs collection CitySalaries field
+     */
+
     private List<Langs> langs;
 }

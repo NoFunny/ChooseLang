@@ -18,7 +18,8 @@ public enum  Role implements GrantedAuthority {
 
     /**
      * Automatically generated method for authorities and role system in Spring Security
-     * @return
+     *
+     * @see org.springframework.security.authentication.jaas.AuthorityGranter
      */
 
     @Override

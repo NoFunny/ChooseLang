@@ -5,9 +5,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * This class nedded to created Vacancy object
+ * This class needed to created Vacancy object
  * @author skwardlow
  * @version 1.0
+ * @see JsonIgnoreProperties
  */
 
 @Getter
@@ -27,6 +28,11 @@ public class Vacancy {
 //    private String code;
 //    private Object department;
 //    private Object employment;
+
+    /**
+     * Salary Vacancy field
+     */
+
     private Salary salary;
 //    private Boolean archived;
 //    private String name;
