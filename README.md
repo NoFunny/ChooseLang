@@ -1,8 +1,9 @@
 ## Travis-build 
 [![Build Status](https://travis-ci.org/NoFunny/ChooseLang.svg?branch=master)](https://travis-ci.org/NoFunny/ChooseLang)
 
-#Choose Lang
-###Used technologies 
+# Choose Lang
+
+##### Used technologies 
 ![Image](https://lilly021.com/wp-content/uploads/2019/07/springBoot_featured_image.png)
 ![Image](https://i.ytimg.com/vi/ClM3T7uozEo/maxresdefault.jpg)
 ![Image](https://pbs.twimg.com/media/Ch-UM1wWEAISZac.jpg)
@@ -11,33 +12,31 @@
 
 ![Image](https://www.dataart.com/assets/img/home/headhunter_logo_1.png)
 
-#Project Download
+# Project Download
 ```
 git clone https://github.com/NoFunny/ChooseLang.git
 ```
 
-#Program assembly
+# Program assembly
 
-###With tests
+##### With tests
 ```
 sudo gradle build
 ```
 
-###Without tests
+##### Without tests
 ```
 sudo gradle build -x test
 ```
     
-#Program launch
+# Program launch
 ```
 gradle bootRun
 ```
-###Gradle version 4.5 and higher
+#### Gradle version 4.5 and higher
 
-##The project was made by:
+## The project was made by:
 * Anton Chunikhin
 * Dmitry Gorskov
-
-
 
 [Issues](https://github.com/NoFunny/ChooseLang/issues)
