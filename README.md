@@ -36,7 +36,7 @@ gradle bootRun
 #### Gradle version 4.5 and higher
 
 ## The project was made by:
-* Anton Chunikhin
-* Dmitry Gorskov
+* [Anton Chunikhin](https://github.com/NoFunny)
+* [Dmitry Gorskov](https://github.com/Skwardlow)
 
 [Issues](https://github.com/NoFunny/ChooseLang/issues)
