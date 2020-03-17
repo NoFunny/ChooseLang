@@ -42,7 +42,7 @@ gradle bootRun
  * You can also manage the library, delete unnecessary books, and add new ones.
  * Also, the service has an administrator profile, which can update the salary database on the main page and delete users from the admin panel, which is located on the profile page.
 
-###[Link to the project](https://chooselang.herokuapp.com/)
+### [Link to the project](https://chooselang.herokuapp.com/)
 
 ## The project was made by:
 * [Anton Chunikhin](https://github.com/NoFunny)
