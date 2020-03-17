@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/NoFunny/ChooseLang.svg?branch=master)](https://travis-ci.org/NoFunny/ChooseLang)
 
 #Choose Lang
-#####Used technologies 
+###Used technologies 
 ![Image](https://lilly021.com/wp-content/uploads/2019/07/springBoot_featured_image.png)
 ![Image](https://i.ytimg.com/vi/ClM3T7uozEo/maxresdefault.jpg)
 ![Image](https://pbs.twimg.com/media/Ch-UM1wWEAISZac.jpg)
@@ -18,12 +18,12 @@ git clone https://github.com/NoFunny/ChooseLang.git
 
 #Program assembly
 
-#####With tests
+###With tests
 ```
 sudo gradle build
 ```
 
-#####Without tests
+###Without tests
 ```
 sudo gradle build -x test
 ```
@@ -32,7 +32,7 @@ sudo gradle build -x test
 ```
 gradle bootRun
 ```
-####Gradle version 4.5 and higher
+###Gradle version 4.5 and higher
 
 ##The project was made by:
 * Anton Chunikhin
